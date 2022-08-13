@@ -6,7 +6,9 @@ series: ["如何搭建独立博客系列"]
 featured: true
 ---
 
-本文是如何搭建独立博客系列的第一篇，也将教大家如何快速的使用 [GitHub Pages](https://pages.github.com/) 的功能来搭建属于自己的博客。本篇文章属于快速入门版，可以帮助大家快速搭建和观察效果。如果是打算后续持续使用该主题和 `hugo` 来搭建和运营博客，建议跟随这篇文章来搭建 [如何 30 分钟搭建一套完整独立博客]({{< ref "blog/how-to-add-comments-and-analytics-to-blog-site-in-30min.zh" >}})。
+本文是如何搭建独立博客系列的第一篇，也将教大家如何快速的使用 [GitHub Pages](https://pages.github.com/) 的功能来搭建属于自己的博客。
+
+本篇文章属于快速入门版，可以帮助大家快速搭建和观察效果。如果是打算后续持续使用该主题和 `hugo` 来搭建和运营博客，建议跟随这篇文章来搭建 [如何 30 分钟搭建一套完整独立博客]({{< ref "blog/how-to-add-comments-and-analytics-to-blog-site-in-30min.zh" >}})。
 
 <!--more-->
 
@@ -16,7 +18,7 @@ featured: true
 
 在搭建自己的博客前，我们需要先注册一个 [GitHub](https://github.com/) 账号，这个账号的账户名非常重要，它是后面我们博客的域名地址。
 
-> 例如我们创建的账号名称是 guangzhengli，那么我们的博客地址就是 https://guangzhengli.github.io.
+例如我们创建的账号名称是 guangzhengli，那么我们的博客地址就是 https://guangzhengli.github.io。
 
 ### 创建 GitHub Pages 仓库
 
@@ -34,7 +36,7 @@ git clone https://github.com/guangzhengli/hugo-ladder-exampleSite.git
 
 在拉取完代码后，我们需要修改配置信息，文件在根目录的 `config.yml` 文件中，我们需要将 Demo 的配置修改成自己。
 
-> 请注意，一定记得修改配置信息，特别是拉取博客后大家会像评论配置，数据统计配置等，否则将会给后续使用改教程的人带来困扰，谢谢🙏。如果想搭建自己独立的评论系统，可以参考这篇文章来搭建 [如何 30 分钟搭建一套完整独立博客]({{< ref "blog/how-to-add-comments-and-analytics-to-blog-site-in-30min.zh" >}})。
+> 请注意，一定记得修改配置信息，特别是拉取博客后大家会像评论配置等，否则将会给后续使用改教程的人带来困扰，谢谢🙏。如果想搭建自己独立的评论系统，可以参考这篇文章来搭建 [如何 30 分钟搭建一套完整独立博客]({{< ref "blog/how-to-add-comments-and-analytics-to-blog-site-in-30min.zh" >}})。
 
 ### 修改博客配置
 
@@ -85,3 +87,4 @@ comments:
 ## 如果添加和修改自己的博客文章
 
 可以在根目录的 `content/blog` 中找到该站点的 Demo 展示文章，可以选择新增一个 `markdown` 文件添加自己想要表达的内容即可。
+
