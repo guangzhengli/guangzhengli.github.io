@@ -2,7 +2,7 @@
 title: 如何 30 分钟搭建一套完整独立博客
 date: 2021-07-18 20:29:08
 tags: ["hugo", "ladder主题", "教程", "GitHub Pages"]
-series: ["how to deploy blog"]
+series: ["how to create your own blog"]
 featured: true
 ---
 
