@@ -2,7 +2,7 @@
 title: 如何 30 分钟搭建一套完整独立博客
 date: 2021-07-18 20:29:08
 tags: ["hugo", "ladder主题", "教程", "GitHub Pages"]
-series: ["how to create your own blog"]
+series: ["how to create your blog"]
 featured: true
 ---
 
@@ -14,13 +14,15 @@ featured: true
 
 ### 技术选型
 
-搭建独立博客的方式有很多，有 Service 服务器型的，好处可以存储和计算，无限制的开发功能，而缺点的话也很明显，首先你需要一笔不菲的服务器费用来支持带宽和并发，如果博客是面向全球的，还需要考虑多地部署来提升访问速度。
+今天的大多数网站分为两类--动态网站和静态网站。动态网站是基于服务器的，它的内容是变化的，可以根据用户返回不同的内容。例如根据不同用户的喜好进行推荐，根据地区进行内容语言区分。页面依靠内容管理系统（CMS）或数据库进行渲染，并可以随着需求的增长而不断增加复杂性。而缺点的话也很明显，首先你需要一笔不菲的服务器费用来支持带宽和并发，如果服务是面向全球的，还需要考虑多地部署来提升访问速度。
 
-还有一种便是本网站采用的`静态站点生成`方案，其原理便是生成需要的静态网页，托管到  CDN 或者平台 [Netlify](https://netlify.com/)、[Heroku](https://www.heroku.com/)、[GoDaddy](https://www.godaddy.com/)、[DreamHost](https://www.dreamhost.com/)、[GitHub Pages](https://pages.github.com/)、[GitLab Pages](https://about.gitlab.com/features/pages/)、[Surge](https://surge.sh/)、[Firebase](https://firebase.google.com/docs/hosting/)、[Google Cloud Storage](https://cloud.google.com/storage/)、[Amazon S3](https://aws.amazon.com/s3/)、[Rackspace](https://www.rackspace.com/cloud/files)、[Azure](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website)和 [CloudFront](https://aws.amazon.com/cloudfront/) 上即可。优点是免费，无需考虑并发压力。缺点是只能提供静态网页能力，不过对于博客这种无需复杂功能的站点来说，是一种非常好的选择。
+还有一种就是我们选择的静态网站，使用 static site generators (SSG) 技术，会向所有用户显示相同的内容。使用服务器端的渲染来提供HTML、CSS和Javascript文件。静态网站的优势包括速度、安全和SEO。还易于维护，并具有高度可扩展性。由于静态网站生成器（SSG）在CDN上存储一个已经编译好的页面，它们的加载速度要快得多。
+
+我们可以选择免费托管到  CDN 或者平台 [Netlify](https://netlify.com/)、[Heroku](https://www.heroku.com/)、[GoDaddy](https://www.godaddy.com/)、[DreamHost](https://www.dreamhost.com/)、[GitHub Pages](https://pages.github.com/)、[GitLab Pages](https://about.gitlab.com/features/pages/)、[Surge](https://surge.sh/)、[Firebase](https://firebase.google.com/docs/hosting/)、[Google Cloud Storage](https://cloud.google.com/storage/)、[Amazon S3](https://aws.amazon.com/s3/)、[Rackspace](https://www.rackspace.com/cloud/files)、[Azure](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website)和 [CloudFront](https://aws.amazon.com/cloudfront/) 上。
 
 对于开发者来讲，托管到 [GitHub Pages](https://pages.github.com/) 是最熟悉的方案，我们本篇文章也是基于此方案展开的教程。不过 [GitHub Pages](https://pages.github.com/) 对于部分地区的访问速度来讲并不友好，可以考虑使用其它自带 CDN 的免费平台来部署，例如本站使用的 [Cloudflare Pages](https://pages.cloudflare.com/)。
 
-在`静态站点生成`方案中，有几种常见的方案，有很流行的 [Hexo](https://hexo.io/), 本博客采用的 [Hugo](https://gohugo.io/)，还有比较新的技术 [Next.js](https://nextjs.org/)。
+在 static site generators (SSG) 方案中，有几种常见的方案，[Hexo](https://hexo.io/), [Jekyll](https://jekyllrb.com/),  [Hugo](https://gohugo.io/) 和 [Next.js](https://nextjs.org/)。
 
 其中 [Hexo](https://hexo.io/) 的生态是最丰富和完善的，在 GitHub 中能找到最多的主题适配、最完善的第三方支持。但是考虑到我后续会自己开发定制化的主题和功能，去翻阅了下 [Hexo](https://hexo.io/) 的官方文档，结果 [Hexo](https://hexo.io/) 的文档不能说是事无巨细吧，只能说是等于没有。[Next.js](https://nextjs.org/) 是非常符合未来的一门技术，也是我比较心动的方案，但是后续发现  [Next.js](https://nextjs.org/) 在开发博客的生态上目前还不够完善。
 
@@ -349,7 +351,7 @@ featured: true
 
 完整的教程可以查看 [官方教程](https://pages.github.com/)，简单来讲就是 [创建一个新的 repository](https://github.com/new)，名字为 `username.github.io`。
 
-<img src="https://cdn.jsdelivr.net/gh/guangzhengli/PicURL@master/uPic/j0eHDj.png" alt="j0eHDj" style="zoom: 33%;" />
+![j0eHDj](https://cdn.jsdelivr.net/gh/guangzhengli/PicURL@master/uPic/j0eHDj.png)
 
 ### Actions
 

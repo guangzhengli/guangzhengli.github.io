@@ -2,7 +2,7 @@
 title: 如何 10 分钟快速搭建你自己的独立博客
 date: 2022-08-01
 tags: ["hugo", "ladder主题", "教程", "GitHub Pages"]
-series: ["how to create your own blog"]
+series: ["how to create your blog"]
 featured: true
 ---
 
@@ -24,7 +24,7 @@ featured: true
 
 完整的教程可以查看 [官方教程](https://pages.github.com/)，简单来讲就是 [创建一个新的 repository](https://github.com/new)，名字为 `username.github.io`。
 
-<img src="https://cdn.jsdelivr.net/gh/guangzhengli/PicURL@master/uPic/j0eHDj.png" alt="j0eHDj" style="zoom: 33%;" />
+![j0eHDj](https://cdn.jsdelivr.net/gh/guangzhengli/PicURL@master/uPic/j0eHDj.png)
 
 ## 搭建博客
 

@@ -1,8 +1,8 @@
 ---
 title: How to create your blog for free in 10min
 date: 2022-08-01
-tags: ["hugo", "theme ladder", "Tutorial", "GitHub Pages"]
-series: ["how to create your own blog"]
+tags: ["hugo", "ladder", "Tutorial", "GitHub Pages"]
+series: ["how to create your blog"]
 featured: true
 ---
 
@@ -24,7 +24,7 @@ For example, if we create an account with the username guangzhengli, we will get
 
 You can find the full tutorial in the [GitHub Pages Doc](https://pages.github.com/). It just need [create a new repository](https://github.com/new) with the repository name  `username.github.io`.
 
-<img src="https://cdn.jsdelivr.net/gh/guangzhengli/PicURL@master/uPic/j0eHDj.png" alt="j0eHDj" style="zoom: 33%;" />
+![j0eHDj](https://cdn.jsdelivr.net/gh/guangzhengli/PicURL@master/uPic/j0eHDj.png)
 
 ## Build blog
 
