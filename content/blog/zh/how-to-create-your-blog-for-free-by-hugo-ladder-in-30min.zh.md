@@ -329,7 +329,7 @@ featured: true
 
  [Google analytics](https://analytics.google.com/analytics/web/) 的集成简单和免费，不过缺点是无法做到隐私保护（对应数据会提供给 Google），页面也是比较笨重和缓慢。
 
-所以大家如果有需求可以自己搭建 [umami](https://umami.is/) 来做数据统计，相关过程和步骤我放到另外的一篇博客 [如何免费搭建的 umami]({{< ref "blog/how-to-integrate-umami-for-free-to-blog-site.zh.md" >}})。
+所以大家如果有需求可以自己搭建 [umami](https://umami.is/) 来做数据统计，相关过程和步骤我放到另外的一篇博客 [如何免费搭建的 umami]({{< ref "blog/zh/how-to-integrate-umami-for-free-to-blog-site.zh.md" >}})。
 
 ## SEO
 
