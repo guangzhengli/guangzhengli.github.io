@@ -292,7 +292,7 @@ For [Google analytics](https://analytics.google.com/analytics/web/) you can get 
 
 The integration of [Google analytics](https://analytics.google.com/analytics/web/) is simple and free, but the disadvantage is that it is not privacy-protected (the data will upload to Google), and the analytics pages are slow.
 
-So if you have the need to build [umami](https://umami.is/) to do the privacy-protected analytics, the process and steps I put in another blog [How to build umami for free-to-use]({{< ref "blog/how-to-integrate-umami-for-free-to-blog-site.md" >}}).
+So if you have the need to build [umami](https://umami.is/) to do the privacy-protected analytics, the process and steps I put in another blog [How to build umami for free-to-use]({{< ref "blog/how-to-integrate-umami-for-free-to-blog-site.en.md" >}}).
 
 ## SEO
 

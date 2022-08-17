@@ -8,7 +8,7 @@ featured: true
 
 This article is the first in a series on how to build a free independent blog, and will also teach you how to quickly use the features of [GitHub Pages](https://pages.github.com/) to build your blog.
 
-It will help you build and deploy a blog site quickly. For more on  [hugo-ladder](https://github.com/guangzhengli/hugo-theme-ladder), we recommend following this article to build  [how to create your blog for free by hugo ladder theme in 30min]({{< ref "blog/how-to-create-your-blog-for-free-by-hugo-ladder-in-30min.zh" >}})。
+It will help you build and deploy a blog site quickly. For more on  [hugo-ladder](https://github.com/guangzhengli/hugo-theme-ladder), we recommend following this article to build  [how to create your blog for free by hugo ladder theme in 30min]({{< ref "blog/how-to-create-your-blog-for-free-by-hugo-ladder-in-30min.en.zh" >}})。
 
 <!--more-->
 
