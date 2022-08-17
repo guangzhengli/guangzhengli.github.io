@@ -1,6 +1,6 @@
 ---
 title: 如何 30 分钟搭建一套完整独立博客
-date: 2021-07-18 20:29:08
+date: 2022-08-14T16:47:12+08:00
 tags: ["hugo", "ladder主题", "教程", "GitHub Pages"]
 series: ["how to create your blog"]
 featured: true
@@ -53,7 +53,7 @@ choco install hugo -confirm
 
 {{< /tabgroup >}}
 
-可以通过 `hugo version` 来确保按照成功。
+可以通过 `hugo version` 来确保安装成功。
 
 ## Ladder
 
@@ -329,7 +329,7 @@ featured: true
 
  [Google analytics](https://analytics.google.com/analytics/web/) 的集成简单和免费，不过缺点是无法做到隐私保护（对应数据会提供给 Google），页面也是比较笨重和缓慢。
 
-所以大家如果有需求可以自己搭建 [umami](https://umami.is/) 来做数据统计，相关过程和步骤我放到另外的一篇博客 [如何免费搭建的 umami]({{< ref "blog/how-to-integrate-umami-for-free-to-blog-site.md" >}})。
+所以大家如果有需求可以自己搭建 [umami](https://umami.is/) 来做数据统计，相关过程和步骤我放到另外的一篇博客 [如何免费搭建的 umami]({{< ref "blog/how-to-integrate-umami-for-free-to-blog-site.zh.md" >}})。
 
 ## SEO
 

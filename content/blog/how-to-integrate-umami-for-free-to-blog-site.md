@@ -7,7 +7,7 @@ featured: true
 ---
 This article is about how to integrate [umami](https://umami.is/) website analytics to your website for free. The database use  [postgres](https://supabase.com/docs/guides/database) with 500M storage limit provided by [supabase](https://app.supabase.com/).
 
-The [umami](https://umami.is/) service is hosted with [vercel](https://vercel.com/). Thanks to the excellent service capabilities of cloud vendors, you can integrate *umami* in less than 10 minutes. You can see the umami dashboard by clicking on [Dashboard](https://umami-ochre-nu.vercel.app/share/o3zAba1V/guangzhengli).
+The [umami](https://umami.is/) service is hosted with [vercel](https://vercel.com/). Thanks to the excellent service capabilities of cloud vendors, you can integrate *umami* in less than 10 minutes. You can see the umami dashboard by clicking the [Dashboard](https://umami-ochre-nu.vercel.app/share/o3zAba1V/guangzhengli).
 
 <!--more-->
 

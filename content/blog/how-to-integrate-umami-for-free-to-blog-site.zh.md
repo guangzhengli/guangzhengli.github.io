@@ -1,6 +1,6 @@
 ---
 title: 如何零成本给博客集成 umami 数据统计分析功能
-date: 2022-08-14T21:34:40+08:00
+date: 2022-08-14T21:34:36+08:00
 tags: ["hugo", "ladder", "教程", "analytics", "umami"]
 series: ["how to create your blog"]
 featured: true
