@@ -5,7 +5,7 @@ license: MIT
 licenselink: 'https://github.com/guangzhengli/hugo-theme-ladder/blob/master/LICENSE'
 description: 'A fast, clean Hugo theme'
 homepage: 'https://guangzhengli.com/'
-defaultContentLanguage: 'en'
+defaultContentLanguage: 'zh'
 googleAnalytics: G-7E4JNTL3ES
 enableRobotsTXT: true
 paginate: 10
@@ -90,9 +90,9 @@ languages:
   zh:
     languageName: 中
     brand: 主页
-    author: 李光正
+    author: Guangzheng Li
     authorDescription: 阅读与思考，真理与自由
-    info: 一个还在重新学习，重塑思想的独立灵魂
+    info: 一个还在重新学习，重塑思想的开发者
     guestbook:
       title: 留言板
       description: 您的评论，会让该网站更精彩！
