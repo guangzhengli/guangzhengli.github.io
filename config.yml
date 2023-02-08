@@ -24,7 +24,7 @@ menu:
       url: /guestbook
       weight: 4
     - name: Dashboard
-      url: https://umami-ochre-nu.vercel.app/share/o3zAba1V/guangzhengli
+      url: https://analytics.guangzhengli.com/share/o3zAba1V/guangzhengli
       weight: 5
 params:
   brand: HOME
@@ -111,7 +111,7 @@ languages:
           url: /guestbook
           weight: 4
         - name: 网站统计
-          url: https://umami-ochre-nu.vercel.app/share/o3zAba1V/guangzhengli
+          url: https://analytics.guangzhengli.com/share/o3zAba1V/guangzhengli
           weight: 5
 taxonomies:
   series: series
