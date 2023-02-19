@@ -37,14 +37,14 @@ featured: true
 
 首先技术需求会决定后续的技术选型，例如是否要求高可用、可扩展或者性能是否有要求。在这个用例中，这些技术需求可以不要，毕竟只是自用的辅助手段，就算偶尔挂了也无所谓。这也为后续的技术选型打开了道路。
 
-其次需要预估该功能的资源需求，该功能每天定时发送的请求给 Chat 一般不超过 10 条，所以假设 Request / Day = 10。存储的话需要存储会议的轮换名单，名字占用很少，所以预估最大就是 1KB ，Size of storage = 1KB。
+其次需要预估该功能的资源需求，该功能每天定时发送的请求给 Chat 一般不超过 10 条，所以假设 Request / Day = 10。存储的话需要存储会议的轮换名单，名字占用很少，所以预估最大就是 1KB，Size of storage = 1KB。
 
 得到这个技术需求和资源预估后，就能在后续技术选型时有比较明确的方向。首先列出几个可以完成这个功能的方案：
 
 - Local machine + Disk
 - Cloud VM + Disk
 - Serverless
-  - AWS Lamda + DynamoDB
+  - AWS Lambda + DynamoDB
   - Azure Function + CosmosDB
   - Cloudflare Worker + Worker KV
 
