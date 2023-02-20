@@ -31,7 +31,7 @@ featured: true
 
 例如站会的提醒效果图如下所示：
 
-<img src="https://cdn.jsdelivr.net/gh/guangzhengli/PicURL@master/uPic/screenshotr_2023-2-19T17-12-28.png" alt="screenshotr_2023-2-19T17-12-28" style="zoom: 15%;" />
+![screenshotr_2023-2-19T17-12-28](https://cdn.jsdelivr.net/gh/guangzhengli/PicURL@master/uPic/screenshotr_2023-2-19T17-12-28.png)
 
 ## 技术选型
 

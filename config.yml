@@ -9,6 +9,10 @@ defaultContentLanguage: 'zh'
 googleAnalytics: G-7E4JNTL3ES
 enableRobotsTXT: true
 paginate: 10
+# markup:
+#   goldmark:
+#     renderer:
+#       unsafe: true
 menu:
   main:
     - name: Blog
