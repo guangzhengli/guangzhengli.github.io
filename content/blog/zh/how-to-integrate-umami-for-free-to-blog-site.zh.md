@@ -15,11 +15,11 @@ featured: true
 
 数据库用的是 [supabase](https://app.supabase.com/) 提供的有限额的 [postgres](https://supabase.com/docs/guides/database) 数据库，创建一个 supabase 账号，新建一个项目，输入 Datebase password 即可创建数据库服务。
 
-![cN3Zg4](https://cdn.jsdelivr.net/gh/guangzhengli/PicURL@master/uPic/cN3Zg4.png)
+![WWmfTm](https://storage.guangzhengli.com/images/WWmfTm.jpg)
 
 创建可能会话费几分钟时间，创建完成后只需要拿到 `DATABASE_URL` 即可。
 
-![image-20220815182141638](https://cdn.jsdelivr.net/gh/guangzhengli/PicURL@master/uPic/image-20220815182141638.png)
+![hvpSuQ](https://storage.guangzhengli.com/images/hvpSuQ.jpg)
 
 ## 托管 umami
 
@@ -36,7 +36,7 @@ featured: true
 
 最后在 Build 阶段， `build command`  记得填写 `yarn build && yarn update-db`，这样的话会自动 migrate 数据库的表。无需自己手动导入。
 
-![gePzXI](https://cdn.jsdelivr.net/gh/guangzhengli/PicURL@master/uPic/gePzXI.png)
+![rtIZCn](https://storage.guangzhengli.com/images/rtIZCn.jpg)
 
 当然如果你想自己导入的话，也可以直接从这里 https://github.com/umami-software/umami/blob/master/sql/schema.postgresql.sql 获取需要的表。
 
@@ -48,6 +48,6 @@ featured: true
 
 我们拿到对应的 `data-website-id` 和 `src` ，填入主题配置中的 `params.analytics.umami.website_id` 和  `params.analytics.umami.url` 即可。 
 
-![OZcU7U](https://cdn.jsdelivr.net/gh/guangzhengli/PicURL@master/uPic/OZcU7U.png)
+![YLRdbm](https://storage.guangzhengli.com/images/YLRdbm.jpg)
 
 最终，我们可以得到本站数据统计看板的功能🎉🎉🎉

@@ -314,7 +314,7 @@ For example, if we create an account with the username guangzhengli, we will get
 
 You can find the full tutorial in the [GitHub Pages Doc](https://pages.github.com/). It just need [create a new repository](https://github.com/new) with the repository name  `username.github.io`.
 
-![j0eHDj](https://cdn.jsdelivr.net/gh/guangzhengli/PicURL@master/uPic/j0eHDj.png)
+![Xu5ikP](https://storage.guangzhengli.com/images/Xu5ikP.jpg)
 
 ### Actions
 
@@ -381,7 +381,7 @@ Once we've made sure our push is successful. It'll automatically build the code 
 
 If `Actions` workflow successfully, we will have a new branch called `gh-pages`. Then go to the repository's settings center `Settings`, select `Pages`, and then `Build and deployment` -> `Source` and select `Deploy from a branch`. After that `Branch` select `gh-pages` to configure successfully.
 
-![nsrExo](https://cdn.jsdelivr.net/gh/guangzhengli/PicURL@master/uPic/nsrExo.png)
+![cuQE65](https://storage.guangzhengli.com/images/cuQE65.jpg)
 
 Then you can select `Visit site` to `https://username.github.io` for successful access! 🎉🎉🎉🎉
 

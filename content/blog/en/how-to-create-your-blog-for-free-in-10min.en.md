@@ -24,7 +24,7 @@ For example, if we create an account with the username guangzhengli, we will get
 
 You can find the full tutorial in the [GitHub Pages Doc](https://pages.github.com/). It just need [create a new repository](https://github.com/new) with the repository name  `username.github.io`.
 
-![j0eHDj](https://cdn.jsdelivr.net/gh/guangzhengli/PicURL@master/uPic/j0eHDj.png)
+![Xu5ikP](https://storage.guangzhengli.com/images/Xu5ikP.jpg)
 
 ## Build blog
 
@@ -115,7 +115,7 @@ Once we've made sure our push is successful, it will automatically build the cod
 
 If `Actions`  runs successfully, we will have a new branch called `gh-pages`. We go to the repository's settings center `Settings`, select `Pages`, and then `Build and deployment` -> `Source` and selects `Deploy from a branch`. After that `Branch` select `gh-pages` to configure successfully.
 
-![nsrExo](https://cdn.jsdelivr.net/gh/guangzhengli/PicURL@master/uPic/nsrExo.png)
+![cuQE65](https://storage.guangzhengli.com/images/cuQE65.jpg)
 
 Select `Visit site` above or manually enter `https://username.github.io` for successful access! 🎉🎉🎉🎉
 

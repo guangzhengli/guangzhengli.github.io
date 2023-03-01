@@ -24,7 +24,7 @@ featured: false
 
 完整的教程可以查看 [官方教程](https://pages.github.com/)，简单来讲就是 [创建一个新的 repository](https://github.com/new)，名字为 `username.github.io`。
 
-![j0eHDj](https://cdn.jsdelivr.net/gh/guangzhengli/PicURL@master/uPic/j0eHDj.png)
+![Xu5ikP](https://storage.guangzhengli.com/images/Xu5ikP.jpg)
 
 ## 搭建博客
 
@@ -124,7 +124,7 @@ git push origin main
 
 如果 `Actions` 运行成功的话，我们会有一个新的分支叫做 `gh-pages`。这时候我们去仓库的设置中心 `Settings` ，选择 `Pages` ，之后将 `Build and deployment` -> `Source` 选择 `Deploy from a branch`。后面的 `Branch` 选择 `gh-pages` 即可配置成功。
 
-![nsrExo](https://cdn.jsdelivr.net/gh/guangzhengli/PicURL@master/uPic/nsrExo.png)
+![cuQE65](https://storage.guangzhengli.com/images/cuQE65.jpg)
 
 这个时候，选择上方的 `Visit site` 或者手动输入 `https://username.github.io` 即可访问成功！ 🎉🎉🎉
 

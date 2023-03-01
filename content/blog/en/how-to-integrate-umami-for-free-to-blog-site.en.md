@@ -15,11 +15,11 @@ The [umami](https://umami.is/) service is hosted with [vercel](https://vercel.co
 
 The database use  [postgres](https://supabase.com/docs/guides/database) with 500M storage limit provided by [supabase](https://app.supabase.com/). You can create a supabase account, click `new project`, and enter the database passowrd to create an ProgresSQL database service.
 
-![cN3Zg4](https://cdn.jsdelivr.net/gh/guangzhengli/PicURL@master/uPic/cN3Zg4.png)
+![WWmfTm](https://storage.guangzhengli.com/images/WWmfTm.jpg)
 
 It will take a few minutes to create the database service, and you can get the  `DATABASE_URL` after it's done.
 
-![image-20220815182141638](https://cdn.jsdelivr.net/gh/guangzhengli/PicURL@master/uPic/image-20220815182141638.png)
+![hvpSuQ](https://storage.guangzhengli.com/images/hvpSuQ.jpg)
 
 ## Hosting umami
 
@@ -36,7 +36,7 @@ The [umami](https://umami.is/) service is hosted with [vercel](https://vercel.co
 6. Deploy and visit your application at <deploy-id>.vercel.app.
 7. Follow the Getting started guide starting from the Login step and be sure to change the default password.
 
-![gePzXI](https://cdn.jsdelivr.net/gh/guangzhengli/PicURL@master/uPic/gePzXI.png)
+![rtIZCn](https://storage.guangzhengli.com/images/rtIZCn.jpg)
 
 Of course, if you want to import tables yourself, you can also get the tables from here https://github.com/umami-software/umami/blob/master/sql/schema.postgresql.sql.
 
@@ -48,6 +48,6 @@ You can change the default password and `Add webiste`, enter the `Name` and `Dom
 
 Then you can get  `data-website-id` and  `src` values by click `Get tracking code`，enter the value to the `hugo-ladder` configuration  `params.analytics.umami.website_id` ,  `params.analytics.umami.url`. 
 
-![OZcU7U](https://cdn.jsdelivr.net/gh/guangzhengli/PicURL@master/uPic/OZcU7U.png)
+![YLRdbm](https://storage.guangzhengli.com/images/YLRdbm.jpg)
 
 In the end, you can get the website statistics analytics dashboard.🎉🎉🎉
