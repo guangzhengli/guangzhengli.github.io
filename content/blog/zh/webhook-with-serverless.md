@@ -31,7 +31,7 @@ featured: true
 
 例如站会的提醒效果图如下所示：
 
-![screenshotr_2023-2-19T17-12-28](https://cdn.jsdelivr.net/gh/guangzhengli/PicURL@master/uPic/screenshotr_2023-2-19T17-12-28.png)
+![screenshotr_2023-2-19T17-12-28](https://storage.guangzhengli.com/images/screenshotr_2023-2-19T17-12-28.png)
 
 ## 技术选型
 
@@ -128,7 +128,7 @@ while True:
 
 首先是定时发送消息给 Chat 提供的 webhook 地址，从 KV 中获取当前的会议 Owner，会议地址和消息，通过获取配置的 webhook 地址发送给对应的 Chat（企业微信或者 Google Chat）。
 
-```js
+```javascript
 import { send_google_chat_message } from "./google_chat_notificaiton";
 import { send_wework_chat_message } from "./wework_chat_notificaiton";
 
