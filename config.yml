@@ -1,3 +1,7 @@
+copyright: "2023 GuangzhengLi All rights reserved"
+Author:
+  name: "Guangzheng Li"
+  email: "iguangzhengli@gmail.com"
 baseURL: 'https://guangzhengli.com/'
 title: GuangzhengLi
 theme: hugo-theme-ladder
