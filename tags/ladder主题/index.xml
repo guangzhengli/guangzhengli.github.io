@@ -1,2 +1,382 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ladder主题 on GuangzhengLi</title><link>https://guangzhengli.com/tags/ladder%E4%B8%BB%E9%A2%98/</link><description>Recent content in ladder主题 on GuangzhengLi</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Sun, 14 Aug 2022 16:47:12 +0800</lastBuildDate><atom:link href="https://guangzhengli.com/tags/ladder%E4%B8%BB%E9%A2%98/index.xml" rel="self" type="application/rss+xml"/><item><title>如何 30 分钟搭建一套完整独立博客</title><link>https://guangzhengli.com/blog/zh/how-to-create-your-blog-for-free-by-hugo-ladder-in-30min/</link><pubDate>Sun, 14 Aug 2022 16:47:12 +0800</pubDate><guid>https://guangzhengli.com/blog/zh/how-to-create-your-blog-for-free-by-hugo-ladder-in-30min/</guid><description>&lt;p>本文是关于如何搭建免费的独立博客系列的第二篇，包括如何使用本博客主题 &lt;code>hugo-ladder&lt;/code>，如何集成评论和统计功能等。如果后续打算使用该主题来搭建和运营博客，建议跟随本篇文章来搭建。&lt;/p></description></item><item><title>如何 10 分钟快速搭建你自己的独立博客</title><link>https://guangzhengli.com/blog/zh/how-to-create-your-blog-for-free-in-10min/</link><pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate><guid>https://guangzhengli.com/blog/zh/how-to-create-your-blog-for-free-in-10min/</guid><description>&lt;p>本文是如何搭建免费的独立博客系列的第一篇，也将教大家如何快速的使用 &lt;a href="https://pages.github.com/">GitHub Pages&lt;/a> 的功能来搭建属于自己的博客。&lt;/p>
-&lt;p>本篇文章属于快速入门版，可以帮助大家快速搭建和观察效果。如果是了解更多关于 &lt;a href="https://github.com/guangzhengli/hugo-theme-ladder">hugo-ladder&lt;/a> 的内容，建议跟随这篇文章来搭建 &lt;a href="https://guangzhengli.com/blog/zh/how-to-create-your-blog-for-free-by-hugo-ladder-in-30min/">如何 30 分钟搭建一套完整独立博客&lt;/a>。&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ladder主题 on GuangzhengLi</title><link>https://guangzhengli.com/tags/ladder%E4%B8%BB%E9%A2%98/</link><description>Recent content in ladder主题 on GuangzhengLi</description><generator>Hugo -- gohugo.io</generator><copyright>2023 GuangzhengLi All rights reserved</copyright><lastBuildDate>Sun, 14 Aug 2022 16:47:12 +0800</lastBuildDate><atom:link href="https://guangzhengli.com/tags/ladder%E4%B8%BB%E9%A2%98/index.xml" rel="self" type="application/rss+xml"/><item><title>如何 30 分钟搭建一套完整独立博客</title><link>https://guangzhengli.com/blog/zh/how-to-create-your-blog-for-free-by-hugo-ladder-in-30min/</link><pubDate>Sun, 14 Aug 2022 16:47:12 +0800</pubDate><guid>https://guangzhengli.com/blog/zh/how-to-create-your-blog-for-free-by-hugo-ladder-in-30min/</guid><description>&lt;p>本文是关于如何搭建免费的独立博客系列的第二篇，包括如何使用本博客主题 &lt;code>hugo-ladder&lt;/code>，如何集成评论和统计功能等。如果后续打算使用该主题来搭建和运营博客，建议跟随本篇文章来搭建。&lt;/p>
+&lt;h2 id="hugo">Hugo&lt;/h2>
+&lt;h3 id="技术选型">技术选型&lt;/h3>
+&lt;p>今天的大多数网站分为两类&amp;ndash;动态网站和静态网站。动态网站是基于服务器的，它的内容是变化的，可以根据用户返回不同的内容。例如根据不同用户的喜好进行推荐，根据地区进行内容语言区分。页面依靠内容管理系统（CMS）或数据库进行渲染，并可以随着需求的增长而不断增加复杂性。而缺点的话也很明显，首先你需要一笔不菲的服务器费用来支持带宽和并发，如果服务是面向全球的，还需要考虑多地部署来提升访问速度。&lt;/p>
+&lt;p>还有一种就是我们选择的静态网站，使用 static site generators (SSG) 技术，会向所有用户显示相同的内容。使用服务器端的渲染来提供HTML、CSS和Javascript文件。静态网站的优势包括速度、安全和SEO。还易于维护，并具有高度可扩展性。由于静态网站生成器（SSG）在CDN上存储一个已经编译好的页面，它们的加载速度要快得多。&lt;/p>
+&lt;p>我们可以选择免费托管到 CDN 或者平台 &lt;a href="https://netlify.com/">Netlify&lt;/a>、&lt;a href="https://www.heroku.com/">Heroku&lt;/a>、&lt;a href="https://www.godaddy.com/">GoDaddy&lt;/a>、&lt;a href="https://www.dreamhost.com/">DreamHost&lt;/a>、&lt;a href="https://pages.github.com/">GitHub Pages&lt;/a>、&lt;a href="https://about.gitlab.com/features/pages/">GitLab Pages&lt;/a>、&lt;a href="https://surge.sh/">Surge&lt;/a>、&lt;a href="https://firebase.google.com/docs/hosting/">Firebase&lt;/a>、&lt;a href="https://cloud.google.com/storage/">Google Cloud Storage&lt;/a>、&lt;a href="https://aws.amazon.com/s3/">Amazon S3&lt;/a>、&lt;a href="https://www.rackspace.com/cloud/files">Rackspace&lt;/a>、&lt;a href="https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website">Azure&lt;/a>和 &lt;a href="https://aws.amazon.com/cloudfront/">CloudFront&lt;/a> 上。&lt;/p>
+&lt;p>对于开发者来讲，托管到 &lt;a href="https://pages.github.com/">GitHub Pages&lt;/a> 是最熟悉的方案，我们本篇文章也是基于此方案展开的教程。不过 &lt;a href="https://pages.github.com/">GitHub Pages&lt;/a> 对于部分地区的访问速度来讲并不友好，可以考虑使用其它自带 CDN 的免费平台来部署，例如本站使用的 &lt;a href="https://pages.cloudflare.com/">Cloudflare Pages&lt;/a>。&lt;/p>
+&lt;p>在 static site generators (SSG) 方案中，有几种常见的方案，&lt;a href="https://hexo.io/">Hexo&lt;/a>, &lt;a href="https://jekyllrb.com/">Jekyll&lt;/a>, &lt;a href="https://gohugo.io/">Hugo&lt;/a> 和 &lt;a href="https://nextjs.org/">Next.js&lt;/a>。&lt;/p>
+&lt;p>其中 &lt;a href="https://hexo.io/">Hexo&lt;/a> 的生态是最丰富和完善的，在 GitHub 中能找到最多的主题适配、最完善的第三方支持。但是考虑到我后续会自己开发定制化的主题和功能，去翻阅了下 &lt;a href="https://hexo.io/">Hexo&lt;/a> 的官方文档，结果 &lt;a href="https://hexo.io/">Hexo&lt;/a> 的文档不能说是事无巨细吧，只能说是等于没有。&lt;a href="https://nextjs.org/">Next.js&lt;/a> 是非常符合未来的一门技术，也是我比较心动的方案，但是后续发现 &lt;a href="https://nextjs.org/">Next.js&lt;/a> 在开发博客的生态上目前还不够完善。&lt;/p>
+&lt;p>所以在对比了几项技术的优缺点后，我最终采用了Hugo。&lt;a href="https://gohugo.io/">Hugo&lt;/a> 是基于 &lt;code>golang&lt;/code> 编写的快速、现代的静态网站生成器。在 benchmark 测试中可以一秒渲染 5000 篇文章，也具备完善的生态。&lt;/p>
+&lt;h3 id="安装">安装&lt;/h3>
+&lt;p>安装 &lt;code>Hugo&lt;/code> 可以按照官方的文档一步一步安装 &lt;a href="https://gohugo.io/getting-started/installing">hugo install&lt;/a>。也可以按照下面命令快速安装。&lt;/p>
+&lt;div class="tabs tabs-left">
+&lt;style>
+.tabs input#tab-0-0:checked ~ .tab-content-0-0 {
+display: block;
+}
+&lt;/style>
+&lt;input type="radio" class="tab-input" name="tab-select-0" id="tab-0-0" checked/>
+&lt;label for="tab-0-0" class="tab-label">MacOS / Linux&lt;/label>
+&lt;div class="tab-content tab-content-0-0">
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>brew install hugo
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;style>
+.tabs input#tab-0-1:checked ~ .tab-content-0-1 {
+display: block;
+}
+&lt;/style>
+&lt;input type="radio" class="tab-input" name="tab-select-0" id="tab-0-1" />
+&lt;label for="tab-0-1" class="tab-label">Window&lt;/label>
+&lt;div class="tab-content tab-content-0-1">
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>choco install hugo -confirm
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;p>可以通过 &lt;code>hugo version&lt;/code> 来确保安装成功。&lt;/p>
+&lt;h2 id="ladder">Ladder&lt;/h2>
+&lt;p>本博客的主题名为 &lt;code>ladder&lt;/code>，中文即阶梯的含义，读书为输入，写作为输出，都是获取知识的阶梯。&lt;/p>
+&lt;p>Ladder 主题的仓库地址是：&lt;a href="https://github.com/guangzhengli/hugo-theme-ladder">https://github.com/guangzhengli/hugo-theme-ladder&lt;/a>&lt;/p>
+&lt;p>为大家准备好的一个已经配置好的仓库地址是： &lt;a href="https://github.com/guangzhengli/hugo-ladder-exampleSite">https://github.com/guangzhengli/hugo-ladder-exampleSite&lt;/a>&lt;/p>
+&lt;p>如果你打算熟悉 &lt;code>hugo&lt;/code> 命令或者后续持续开发的话 ，可以从 &lt;a href="#%E9%85%8D%E7%BD%AE%E5%88%9D%E5%A7%8B%E5%8C%96">#配置初始化&lt;/a>一步一步来。&lt;/p>
+&lt;p>如果你之前没有使用过 &lt;code>hugo&lt;/code> 或者是打算迁移博客的话，可以直接输入克隆已经初始化好的，在浏览器打开 &lt;code>http://localhost:1313/&lt;/code>。&lt;strong>并且可以直接跳转到 &lt;a href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E7%BD%AE">#自定义配置&lt;/a>。无需做初始化操作&lt;/strong>。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>git clone https://github.com/guangzhengli/hugo-ladder-exampleSite.git
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>hugo server -D
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="配置初始化">配置初始化&lt;/h3>
+&lt;p>Hugo 提供了一个 &lt;code>new&lt;/code> 命令来创建一个新的网站:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>hugo new site my_website
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd my_website
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>初始化你的项目目录为 git 仓库, 并且把主题仓库作为你的网站目录的子模块。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>git init
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git submodule add https://github.com/guangzhengli/hugo-theme-ladder themes/ladder
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>因为个人偏爱 &lt;code>yml&lt;/code> 的阅读习惯，所以本文使用 &lt;code>yml&lt;/code> 而非默认的 &lt;code>toml&lt;/code> 文件类型来配置，大家可以根据偏好到 &lt;a href="https://transform.tools/yaml-to-toml">transform.tool&lt;/a> 进行转换。&lt;/p>
+&lt;p>下面是本主题完整的 &lt;code>config.yml&lt;/code> 文件，大家可以删除根目录下默认的 &lt;code>config.toml&lt;/code> 文件，新建一个 &lt;code>config.yml&lt;/code> 文件代替。&lt;/p>
+&lt;p>
+&lt;details class="toggle">
+&lt;summary markdown="span">点击查看完整的 &lt;code>config.yml&lt;/code> 文件&lt;/summary>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yml" data-lang="yml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">baseURL&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;https://hugo-ladder.pages.dev&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">title&lt;/span>: &lt;span style="color:#ae81ff">LADDER&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">theme&lt;/span>: &lt;span style="color:#ae81ff">hugo-theme-ladder&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">license&lt;/span>: &lt;span style="color:#ae81ff">MIT&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">licenselink&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;https://github.com/guangzhengli/hugo-theme-ladder/blob/master/LICENSE&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">description&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;A fast, clean Hugo theme&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">homepage&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;https://hugo-ladder.pages.dev&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">defaultContentLanguage&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;en&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">googleAnalytics&lt;/span>: &lt;span style="color:#ae81ff">G-xxx&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">paginate&lt;/span>: &lt;span style="color:#ae81ff">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">params&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">brand&lt;/span>: &lt;span style="color:#ae81ff">HOME&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">avatarURL&lt;/span>: &lt;span style="color:#ae81ff">/images/avatar.png&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">author&lt;/span>: &lt;span style="color:#ae81ff">Hugo Ladder&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">authorDescription&lt;/span>: &lt;span style="color:#ae81ff">A clean, fast hugo theme focused on Reading&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">info&lt;/span>: &lt;span style="color:#ae81ff">Build a free and beautiful blog site to record your thoughts and increase your influence&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">favicon&lt;/span>: &lt;span style="color:#ae81ff">/images/avatar.png&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">options&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">showDarkMode&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">enableImgZooming&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">enableMultiLang&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">darkModeTheme&lt;/span>: &lt;span style="color:#ae81ff">data-dark-mode&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">#darkModeTheme: icy-dark-mode&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">comments&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">giscus&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">enable&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">repo&lt;/span>: &lt;span style="color:#ae81ff">username/repo&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">repo_id&lt;/span>: &lt;span style="color:#ae81ff">xxx&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">category&lt;/span>: &lt;span style="color:#ae81ff">Announcements&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">category_id&lt;/span>: &lt;span style="color:#ae81ff">xxx&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">mapping&lt;/span>: &lt;span style="color:#ae81ff">pathname&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">position&lt;/span>: &lt;span style="color:#ae81ff">top&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">lang&lt;/span>: &lt;span style="color:#ae81ff">en&lt;/span> &lt;span style="color:#75715e"># pick a language from https://github.com/giscus/giscus/tree/main/locales&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">utteranc&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">enable&lt;/span>: &lt;span style="color:#66d9ef">false&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">repo&lt;/span>: &lt;span style="color:#ae81ff">username/xxx&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">issueTerm&lt;/span>: &lt;span style="color:#ae81ff">pathname&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">analytics&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">google&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">SiteVerificationTag&lt;/span>: &lt;span style="color:#ae81ff">xxx&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">umami&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">enable&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">website_id&lt;/span>: &lt;span style="color:#ae81ff">xxx&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">url&lt;/span>: &lt;span style="color:#ae81ff">https://xxx&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">guestbook&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">title&lt;/span>: &lt;span style="color:#ae81ff">Guestbook&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">description&lt;/span>: &lt;span style="color:#ae81ff">Leave a comment below. It could be anything –- question, appreciation, information, or even humor.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">social&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">GitHub&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">pre&lt;/span>: &amp;gt;-&lt;span style="color:#e6db74">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;lt;svg xmlns=&amp;#34;http://www.w3.org/2000/svg&amp;#34; width=&amp;#34;20&amp;#34; height=&amp;#34;20&amp;#34; viewBox=&amp;#34;0 0 24 24&amp;#34; fill=&amp;#34;none&amp;#34; stroke=&amp;#34;currentColor&amp;#34; stroke-width=&amp;#34;2&amp;#34; stroke-linecap=&amp;#34;round&amp;#34; stroke-linejoin=&amp;#34;round&amp;#34; class=&amp;#34;feather feather-github&amp;#34;&amp;gt;&amp;lt;path d=&amp;#34;M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22&amp;#34;&amp;gt;&amp;lt;/path&amp;gt;&amp;lt;/svg&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">url&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;https://github.com/username/xxx&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">Dashboard&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">pre&lt;/span>: &amp;gt;-&lt;span style="color:#e6db74">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;lt;svg xmlns=&amp;#34;http://www.w3.org/2000/svg&amp;#34; width=&amp;#34;20&amp;#34; height=&amp;#34;20&amp;#34; viewBox=&amp;#34;0 0 24 24&amp;#34; fill=&amp;#34;none&amp;#34; stroke=&amp;#34;currentColor&amp;#34; stroke-width=&amp;#34;2&amp;#34; stroke-linecap=&amp;#34;round&amp;#34; stroke-linejoin=&amp;#34;round&amp;#34; class=&amp;#34;feather feather-box&amp;#34;&amp;gt;&amp;lt;path d=&amp;#34;M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z&amp;#34;&amp;gt;&amp;lt;/path&amp;gt;&amp;lt;polyline points=&amp;#34;3.27 6.96 12 12.01 20.73 6.96&amp;#34;&amp;gt;&amp;lt;/polyline&amp;gt;&amp;lt;line x1=&amp;#34;12&amp;#34; y1=&amp;#34;22.08&amp;#34; x2=&amp;#34;12&amp;#34; y2=&amp;#34;12&amp;#34;&amp;gt;&amp;lt;/line&amp;gt;&amp;lt;/svg&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">url&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;https://xxx&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">languages&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">en&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">languageName&lt;/span>: &lt;span style="color:#ae81ff">EN&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">menu&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">main&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">Blog&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">url&lt;/span>: &lt;span style="color:#ae81ff">/blog&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">weight&lt;/span>: &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">Tags&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">url&lt;/span>: &lt;span style="color:#ae81ff">/tags&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">weight&lt;/span>: &lt;span style="color:#ae81ff">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">Archive&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">url&lt;/span>: &lt;span style="color:#ae81ff">/archives&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">weight&lt;/span>: &lt;span style="color:#ae81ff">3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">Guestbook&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">url&lt;/span>: &lt;span style="color:#ae81ff">/guestbook&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">weight&lt;/span>: &lt;span style="color:#ae81ff">4&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">Dashboard&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">url&lt;/span>: &lt;span style="color:#ae81ff">https://xxx&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">weight&lt;/span>: &lt;span style="color:#ae81ff">5&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">zh&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">languageName&lt;/span>: &lt;span style="color:#ae81ff">中&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">author&lt;/span>: &lt;span style="color:#ae81ff">Ladder 主题&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">authorDescription&lt;/span>: &lt;span style="color:#ae81ff">一个美观，快速并且专注于阅读的主题&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">info&lt;/span>: &lt;span style="color:#ae81ff">帮助开发者构建一个免费并且漂亮的博客网站，记录自己的思考并且提高自己的影响力&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">guestbook&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">title&lt;/span>: &lt;span style="color:#ae81ff">留言板&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">description&lt;/span>: &lt;span style="color:#ae81ff">您的评论，会让该网站更精彩！&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">menu&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">main&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">文章&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">url&lt;/span>: &lt;span style="color:#ae81ff">/blog&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">weight&lt;/span>: &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">分类&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">url&lt;/span>: &lt;span style="color:#ae81ff">/tags&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">weight&lt;/span>: &lt;span style="color:#ae81ff">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">历史文章&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">url&lt;/span>: &lt;span style="color:#ae81ff">/archives&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">weight&lt;/span>: &lt;span style="color:#ae81ff">3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">留言板&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">url&lt;/span>: &lt;span style="color:#ae81ff">/guestbook&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">weight&lt;/span>: &lt;span style="color:#ae81ff">4&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">网站统计&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">url&lt;/span>: &lt;span style="color:#ae81ff">https://xxx&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">weight&lt;/span>: &lt;span style="color:#ae81ff">5&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">taxonomies&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">series&lt;/span>: &lt;span style="color:#ae81ff">series&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">tag&lt;/span>: &lt;span style="color:#ae81ff">tags&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/details>
+&lt;/p>
+&lt;h3 id="启动博客">启动博客&lt;/h3>
+&lt;p>首先我们找到根目录下 &lt;code>archetypes&lt;/code> 文件夹中的 &lt;code>default.md&lt;/code> 文件，用下面的文件替代其中内容。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>---
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>title:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>date: {{ .Date }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tags: []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>series: []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>featured: true
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>---
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Here is summary.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;!--more--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>here is your content.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>复制 &lt;code>themes/ladder/exampleSite/content&lt;/code> 里面的内容到自己的根目录的 &lt;code>content&lt;/code> 下面。&lt;/p>
+&lt;p>输入命令创建一篇名为 &lt;code>my-first-blog&lt;/code> 新的博客。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>hugo new blog/my-first-blog.md
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>创建后可以使用 &lt;code>hugo server -D&lt;/code> 来启动博客，并且在浏览器打开 &lt;code>http://localhost:1313/&lt;/code>，即可看到你的博客网站。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>hugo server -D
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="自定义配置">自定义配置&lt;/h2>
+&lt;h3 id="多语言支持">多语言支持&lt;/h3>
+&lt;p>首先我们需要确定我们博客默认使用的语言是哪种？是否需要多语言的支持？例如我们默认语言使用英文，那么 &lt;code>defaultContentLanguage&lt;/code> 即使用默认的 &lt;code>en&lt;/code>，假如默认使用中文就是 &lt;code>zh&lt;/code>。&lt;/p>
+&lt;p>除此之外，如果不需要多语言的支持，先将 &lt;code>params.options.enableMultiLang&lt;/code> 设置为 &lt;code>false&lt;/code>, 删除配置文件 &lt;code>languages&lt;/code> 配置下其它语言的配置即可。&lt;/p>
+&lt;p>上面的文件展示的是本博客使用的配置，多语言配置中默认语言是英文，可以切换成中文。&lt;/p>
+&lt;h3 id="修改基本信息">修改基本信息&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yml" data-lang="yml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">baseURL&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;https://hugo-ladder.pages.dev&amp;#39;&lt;/span> &lt;span style="color:#75715e">#修改为你的 https://username.github.io&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">homepage&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;https://hugo-ladder.pages.dev&amp;#39;&lt;/span> &lt;span style="color:#75715e">#修改为你的 https://username.github.io&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">params&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">brand&lt;/span>: &lt;span style="color:#ae81ff">HOME&lt;/span> &lt;span style="color:#75715e"># 修改默认的为自己网站的标志&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">avatarURL&lt;/span>: &lt;span style="color:#ae81ff">/images/avatar.png&lt;/span> &lt;span style="color:#75715e">#网站主页的照片信息，你可以在根目录 /static/images/ 里面替换成自己的照片&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">author&lt;/span>: &lt;span style="color:#ae81ff">Hugo Ladder&lt;/span> &lt;span style="color:#75715e"># 修改你自己的名字&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">authorDescription&lt;/span>: &lt;span style="color:#75715e"># 修改对你自己的描述&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">info&lt;/span>: &lt;span style="color:#75715e"># 修改对你自己网站描述&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">favicon&lt;/span>: &lt;span style="color:#ae81ff">/images/avatar.png&lt;/span> &lt;span style="color:#75715e">#网站的 icon，你可以在根目录 /static/images/ 里面替换成自己的照片&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">options&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">showDarkMode&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span> &lt;span style="color:#75715e"># 是否支持黑暗模式&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">languages&lt;/span>: &lt;span style="color:#75715e"># 如果你启用多语言，下面是中文展示&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">zh&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">languageName&lt;/span>: &lt;span style="color:#ae81ff">中&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">author&lt;/span>: &lt;span style="color:#ae81ff">Ladder 主题&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">authorDescription&lt;/span>: &lt;span style="color:#ae81ff">一个美观，快速并且专注于阅读的主题&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">info&lt;/span>: &lt;span style="color:#ae81ff">帮助开发者构建一个免费并且漂亮的博客网站，记录自己的思考并且提高自己的影响力&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>你可以一边修改一边通过浏览器打开 &lt;code>http://localhost:1313/&lt;/code> 实时观看效果。&lt;/p>
+&lt;h3 id="导航栏">导航栏&lt;/h3>
+&lt;p>目前本博客支持 4 种默认的页面，即博客列表，标签分类，历史文章和留言板，&lt;/p>
+&lt;p>可以通过修改 &lt;code>menu.main&lt;/code> 来调整 &lt;code>名称&lt;/code> ，如果要添加新的页面或者修改 &lt;code>URL&lt;/code> 的话，记得在根目录的 &lt;code>content&lt;/code> 下面添加对应的 &lt;code>markdown&lt;/code> 文件。&lt;/p>
+&lt;h3 id="黑暗模式">黑暗模式&lt;/h3>
+&lt;p>本主题目前提供两种黑暗模式，一种是默认的 &lt;code>data-dark-mode&lt;/code> 模式，还有一种是 &lt;code>icy-dark-mode&lt;/code> 模式，可以通过修改 &lt;code>params.darkModeTheme&lt;/code> 的参数进行替换。大家可以自行探索，也欢迎贡献新的模式。&lt;/p>
+&lt;h3 id="社交图标">社交图标&lt;/h3>
+&lt;p>可以通过修改配置文件添加新的图标， &lt;code>params.social&lt;/code> 字段标明 &lt;code>名称&lt;/code>，&lt;code>图标&lt;/code>，&lt;code>自定义地址&lt;/code>，图标可以在这个网站找到 &lt;a href="https://feathericons.com/">feathericons.com&lt;/a>。&lt;/p>
+&lt;h2 id="内容管理">内容管理&lt;/h2>
+&lt;h3 id="文章管理">文章管理&lt;/h3>
+&lt;p>每一次写文章建议填写的配置（也可以不填），文章开头有这个几个字段，分别代表着&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>title:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>date: {{ .Date }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tags: []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>series: []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>featured: true
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;code>title&lt;/code> 文章题目&lt;/li>
+&lt;li>&lt;code>date&lt;/code> 发布日期&lt;/li>
+&lt;li>&lt;code>tags&lt;/code> 标签分类&lt;/li>
+&lt;li>&lt;code>series&lt;/code> 系列文章，会在下方推荐阅读中推荐同系列文章&lt;/li>
+&lt;li>&lt;code>featured&lt;/code> 是否在主页面中展示，&lt;code>true&lt;/code> or &lt;code>false&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h3 id="富文本功能">富文本功能&lt;/h3>
+&lt;p>目前博客默认集成 &lt;code>Toggle&lt;/code>和 &lt;code>Tab group&lt;/code> 两种富文本， &lt;code>Toggle&lt;/code> 的效果例如 &lt;a href="#%E9%85%8D%E7%BD%AE%E5%88%9D%E5%A7%8B%E5%8C%96">#配置初始化&lt;/a> 中可以隐藏代码或者文本， &lt;code>Tab group&lt;/code> 的效果例如在 &lt;a href="#%E5%AE%89%E8%A3%85">#安装Hugo&lt;/a> 中可以切换标签来写教程或文本。&lt;/p>
+&lt;p>除此之外，还有集成 &lt;code>youtube&lt;/code> &lt;code>twitter &lt;/code> 和 &lt;code>站点页面跳转&lt;/code> 等富文本功能。详细可以查看 &lt;a href="https://hugo-ladder.pages.dev/blog/tag-plugins/">rich content&lt;/a>。&lt;/p>
+&lt;p>我还新建了一个仓库 &lt;a href="https://github.com/guangzhengli/awesome-hugo-shortcodes">https://github.com/guangzhengli/awesome-hugo-shortcodes&lt;/a> ，用来收集 &lt;code>hugo shortcodes&lt;/code> ，大家可以去看看有没有自己需要的，可以自行添加。&lt;/p>
+&lt;h2 id="留言板和评论功能集成">留言板和评论功能集成&lt;/h2>
+&lt;p>本主题留言板和评论功能支持两种集成，一种是基于 &lt;a href="https://docs.github.com/en/issues">GitHub Issues&lt;/a> 的 &lt;a href="https://utteranc.es/">utteranc&lt;/a>，还有一种是基于&lt;a href="https://docs.github.com/en/discussions">GitHub Discussions&lt;/a> 的 &lt;a href="https://giscus.app/">giscus&lt;/a>。&lt;/p>
+&lt;p>这里推荐大家使用基于&lt;a href="https://docs.github.com/en/discussions">GitHub Discussions&lt;/a> 的 &lt;a href="https://giscus.app/">giscus&lt;/a>，毕竟 &lt;code>Issues&lt;/code> 是比较严肃的功能， &lt;a href="https://giscus.app/">giscus&lt;/a> 的页面也比较美观，还可以在同一话题下持续回复。&lt;/p>
+&lt;p>集成这两者的步骤都十分简单，只需要跟随 &lt;a href="https://utteranc.es/">utteranc&lt;/a> 和 &lt;a href="https://giscus.app/">giscus&lt;/a> 官方教程走到最后，生成对应的配置值，填入 &lt;code>params.comments&lt;/code> 里面对应的 &lt;code>giscus&lt;/code> &lt;code>utteranc&lt;/code> 即可，需要将另外的一个的 &lt;code>enable&lt;/code> 设置成 &lt;code>false&lt;/code>。&lt;/p>
+&lt;h2 id="网站数据统计功能">网站数据统计功能&lt;/h2>
+&lt;p>主题可以集成 &lt;a href="https://analytics.google.com/analytics/web/">Google analytics&lt;/a> 和 &lt;a href="https://umami.is/">umami&lt;/a> 两种网站数据统计能力。&lt;/p>
+&lt;p>&lt;a href="https://analytics.google.com/analytics/web/">Google analytics&lt;/a> 可以通过官方文档得到对应 &lt;code>G-xxx&lt;/code> 开头的 &lt;code>MEASUREMENT ID&lt;/code> ，填入配置文件中的 &lt;code>googleAnalytics&lt;/code> 即可。&lt;/p>
+&lt;p>&lt;a href="https://analytics.google.com/analytics/web/">Google analytics&lt;/a> 的集成简单和免费，不过缺点是无法做到隐私保护（对应数据会提供给 Google），页面也是比较笨重和缓慢。&lt;/p>
+&lt;p>所以大家如果有需求可以自己搭建 &lt;a href="https://umami.is/">umami&lt;/a> 来做数据统计，相关过程和步骤我放到另外的一篇博客 &lt;a href="https://guangzhengli.com/blog/zh/how-to-integrate-umami-for-free-to-blog-site/">如何免费搭建的 umami&lt;/a>。&lt;/p>
+&lt;h2 id="seo">SEO&lt;/h2>
+&lt;p>&lt;code>SEO&lt;/code> 目前主题已经做了对应的优化，包括完善的 &lt;code>meta&lt;/code> 标签信息等。 除此之外，默认支持 &lt;a href="https://search.google.com/search-console">Google Search Console&lt;/a>，可以根据官方相关文档生成对应的 &lt;code>google-site-verification&lt;/code> ，填入对应的 &lt;code>params.analytics.google.SiteVerificationTag&lt;/code>。&lt;/p>
+&lt;h2 id="部署">部署&lt;/h2>
+&lt;p>关于部署也有多种方式，可以选择托管到 CDN 或者平台 &lt;a href="https://netlify.com/">Netlify&lt;/a>、&lt;a href="https://www.heroku.com/">Heroku&lt;/a>、&lt;a href="https://www.godaddy.com/">GoDaddy&lt;/a>、&lt;a href="https://www.dreamhost.com/">DreamHost&lt;/a>、&lt;a href="https://pages.github.com/">GitHub Pages&lt;/a>、&lt;a href="https://about.gitlab.com/features/pages/">GitLab Pages&lt;/a>、&lt;a href="https://surge.sh/">Surge&lt;/a>、&lt;a href="https://firebase.google.com/docs/hosting/">Firebase&lt;/a>、&lt;a href="https://cloud.google.com/storage/">Google Cloud Storage&lt;/a>、&lt;a href="https://aws.amazon.com/s3/">Amazon S3&lt;/a>、&lt;a href="https://www.rackspace.com/cloud/files">Rackspace&lt;/a>、&lt;a href="https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website">Azure&lt;/a>和 &lt;a href="https://aws.amazon.com/cloudfront/">CloudFront&lt;/a> 。&lt;/p>
+&lt;p>本文选择大家比较通用的 &lt;a href="https://pages.github.com/">GitHub Pages&lt;/a> 来作为教程。&lt;/p>
+&lt;h3 id="创建-githubhttpsgithubcom-账号">创建 &lt;a href="https://github.com/">GitHub&lt;/a> 账号&lt;/h3>
+&lt;p>在搭建自己的博客前，我们需要先注册一个 &lt;a href="https://github.com/">GitHub&lt;/a> 账号，这个账号的账户名非常重要，它是后面我们博客的域名地址。&lt;/p>
+&lt;p>例如我们创建的账号名称是 guangzhengli，那么我们最终的博客地址就是 &lt;a href="https://guangzhengli.github.io">https://guangzhengli.github.io&lt;/a>。&lt;/p>
+&lt;h3 id="创建-github-pages-仓库">创建 GitHub Pages 仓库&lt;/h3>
+&lt;p>完整的教程可以查看 &lt;a href="https://pages.github.com/">官方教程&lt;/a>，简单来讲就是 &lt;a href="https://github.com/new">创建一个新的 repository&lt;/a>，名字为 &lt;code>username.github.io&lt;/code>。&lt;/p>
+&lt;p>&lt;img src="https://storage.guangzhengli.com/images/Xu5ikP.jpg" alt="Xu5ikP">&lt;/p>
+&lt;h3 id="actions">Actions&lt;/h3>
+&lt;p>&lt;code>Actions&lt;/code> 方式用两种，一种是直接推送到 &lt;a href="https://pages.github.com/">GitHub Pages&lt;/a> ，还有一种是在 &lt;code>gh-pages&lt;/code> 分支上生成静态页面代码的方式。代码都在 &lt;a href="https://github.com/guangzhengli/hugo-ladder-exampleSite/tree/master/.github/workflows">https://github.com/guangzhengli/hugo-ladder-exampleSite/tree/master/.github/workflows&lt;/a> 这里。&lt;/p>
+&lt;p>如果你不是选择的直接克隆已经配置好的仓库： &lt;a href="https://github.com/guangzhengli/hugo-ladder-exampleSite">https://github.com/guangzhengli/hugo-ladder-exampleSite&lt;/a>。需要创建新的文件夹 &lt;code>.github/workflows&lt;/code> ，添加新的文件 &lt;code>gh-pages.yml&lt;/code> 文件。&lt;/p>
+&lt;p>{{ &lt;!-- raw HTML omitted -->}}&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yml" data-lang="yml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">generate github pages to gh-pages branch&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">on&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">push&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">branches&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">main&lt;/span> &lt;span style="color:#75715e">## Set a branch name to trigger deployment&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">jobs&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">deploy&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">runs-on&lt;/span>: &lt;span style="color:#ae81ff">ubuntu-20.04&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">steps&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">uses&lt;/span>: &lt;span style="color:#ae81ff">actions/checkout@v2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">with&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">submodules&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span> &lt;span style="color:#75715e"># Fetch Hugo themes (true OR recursive)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">fetch-depth&lt;/span>: &lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#75715e"># Fetch all history for .GitInfo and .Lastmod&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">Setup Hugo&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">uses&lt;/span>: &lt;span style="color:#ae81ff">peaceiris/actions-hugo@v2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">with&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">hugo-version&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;latest&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">extended&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">Build&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">run&lt;/span>: &lt;span style="color:#ae81ff">hugo --minify&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">Deploy&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">uses&lt;/span>: &lt;span style="color:#ae81ff">peaceiris/actions-gh-pages@v3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># If you&amp;#39;re changing the branch from main, &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># also change the `main` in `refs/heads/main` &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># below accordingly.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">if&lt;/span>: &lt;span style="color:#ae81ff">github.ref == &amp;#39;refs/heads/main&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">with&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">github_token&lt;/span>: &lt;span style="color:#ae81ff">${{ secrets.GITHUB_TOKEN }}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">publish_dir&lt;/span>: &lt;span style="color:#ae81ff">./public&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>{{ &lt;!-- raw HTML omitted --> }}&lt;/p>
+&lt;h3 id="部署-github-pages">部署 GitHub Pages&lt;/h3>
+&lt;p>在你项目的根目录下输入以下命令：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>git remote add origin https://github.com/username/username.github.io.git
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git add .
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git commit -m &lt;span style="color:#e6db74">&amp;#34;feat: init blog site&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git push origin main
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>确保我们推送成功后，我们会在 &lt;code>Actions&lt;/code> 中自动的将代码 build 成 GitHub Pages 需要的文件，可以到这个地址检查 &lt;code>workflow&lt;/code> 是否成功运行。注意将地址中 &lt;code>username&lt;/code> 替换成自己的账号名称。&lt;code>https://github.com/username/username.github.io/actions&lt;/code>。&lt;/p>
+&lt;p>如果 &lt;code>Actions&lt;/code> 运行成功的话，我们会有一个新的分支叫做 &lt;code>gh-pages&lt;/code>。这时候我们去仓库的设置中心 &lt;code>Settings&lt;/code> ，选择 &lt;code>Pages&lt;/code> ，之后将 &lt;code>Build and deployment&lt;/code> -&amp;gt; &lt;code>Source&lt;/code> 选择 &lt;code>Deploy from a branch&lt;/code>。后面的 &lt;code>Branch&lt;/code> 选择 &lt;code>gh-pages&lt;/code> 即可配置成功。&lt;/p>
+&lt;p>&lt;img src="https://storage.guangzhengli.com/images/cuQE65.jpg" alt="cuQE65">&lt;/p>
+&lt;p>这个时候，选择上方的 &lt;code>Visit site&lt;/code> 或者手动输入 &lt;code>https://username.github.io&lt;/code> 即可访问成功！ 🎉🎉🎉&lt;/p>
+&lt;p>如果部署时，有任何问题，可以在下方留言。&lt;/p></description></item><item><title>如何 10 分钟快速搭建你自己的独立博客</title><link>https://guangzhengli.com/blog/zh/how-to-create-your-blog-for-free-in-10min/</link><pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate><guid>https://guangzhengli.com/blog/zh/how-to-create-your-blog-for-free-in-10min/</guid><description>&lt;p>本文是如何搭建免费的独立博客系列的第一篇，也将教大家如何快速的使用 &lt;a href="https://pages.github.com/">GitHub Pages&lt;/a> 的功能来搭建属于自己的博客。&lt;/p>
+&lt;p>本篇文章属于快速入门版，可以帮助大家快速搭建和观察效果。如果是了解更多关于 &lt;a href="https://github.com/guangzhengli/hugo-theme-ladder">hugo-ladder&lt;/a> 的内容，建议跟随这篇文章来搭建 &lt;a href="https://guangzhengli.com/blog/zh/how-to-create-your-blog-for-free-by-hugo-ladder-in-30min/">如何 30 分钟搭建一套完整独立博客&lt;/a>。&lt;/p>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;h3 id="创建-githubhttpsgithubcom-账号">创建 &lt;a href="https://github.com/">GitHub&lt;/a> 账号&lt;/h3>
+&lt;p>在搭建自己的博客前，我们需要先注册一个 &lt;a href="https://github.com/">GitHub&lt;/a> 账号，这个账号的账户名非常重要，它是后面我们博客的域名地址。&lt;/p>
+&lt;p>例如我们创建的账号名称是 guangzhengli，那么我们最终的博客地址就是 &lt;a href="https://guangzhengli.github.io">https://guangzhengli.github.io&lt;/a>。&lt;/p>
+&lt;h3 id="创建-github-pages-仓库">创建 GitHub Pages 仓库&lt;/h3>
+&lt;p>完整的教程可以查看 &lt;a href="https://pages.github.com/">官方教程&lt;/a>，简单来讲就是 &lt;a href="https://github.com/new">创建一个新的 repository&lt;/a>，名字为 &lt;code>username.github.io&lt;/code>。&lt;/p>
+&lt;p>&lt;img src="https://storage.guangzhengli.com/images/Xu5ikP.jpg" alt="Xu5ikP">&lt;/p>
+&lt;h2 id="搭建博客">搭建博客&lt;/h2>
+&lt;p>我们可以选择直接克隆已经准备好的仓库 &lt;a href="https://github.com/guangzhengli/hugo-ladder-exampleSite">hugo-ladder-exampleSite&lt;/a>&lt;/p>
+&lt;pre tabindex="0">&lt;code>git clone https://github.com/guangzhengli/hugo-ladder-exampleSite.git
+&lt;/code>&lt;/pre>&lt;p>在拉取完代码后，我们需要修改配置信息，文件在根目录的 &lt;code>config.yml&lt;/code> 文件中，我们需要将 Demo 的配置修改成自己。&lt;/p>
+&lt;blockquote>
+&lt;p>请注意，一定记得修改配置信息，特别是拉取博客后大家会像评论配置等，否则将会给后续使用改教程的人带来困扰，谢谢🙏。如果想搭建自己独立的评论系统，可以参考这篇文章来搭建 &lt;a href="https://guangzhengli.com/blog/zh/how-to-create-your-blog-for-free-by-hugo-ladder-in-30min/">如何 30 分钟搭建一套完整独立博客&lt;/a>。&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="修改博客配置">修改博客配置&lt;/h3>
+&lt;p>根目录的 &lt;code>config.yml&lt;/code> 文件，使用编辑器打开，修改如下大致的一些配置&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yml" data-lang="yml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">baseURL&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;https://hugo-ladder.pages.dev&amp;#39;&lt;/span> &lt;span style="color:#75715e">#修改为你的 https://username.github.io&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">homepage&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;https://hugo-ladder.pages.dev&amp;#39;&lt;/span> &lt;span style="color:#75715e">#修改为你的 https://username.github.io&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">defaultContentLanguage&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;en&amp;#39;&lt;/span> &lt;span style="color:#75715e">#修改默认语言，例如改为 zh 即默认使用中文&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">params&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">brand&lt;/span>: &lt;span style="color:#ae81ff">HOME&lt;/span> &lt;span style="color:#75715e"># 修改默认的为自己网站的标志&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">avatarURL&lt;/span>: &lt;span style="color:#ae81ff">/images/avatar.png&lt;/span> &lt;span style="color:#75715e">#网站主页的照片信息，你可以在根目录 /static/images/ 里面替换成自己的照片&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">author&lt;/span>: &lt;span style="color:#ae81ff">Hugo Ladder&lt;/span> &lt;span style="color:#75715e"># 修改你自己的名字&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">authorDescription&lt;/span>: &lt;span style="color:#75715e"># 修改对你自己的描述&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">info&lt;/span>: &lt;span style="color:#75715e"># 修改对你自己网站描述&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">favicon&lt;/span>: &lt;span style="color:#ae81ff">/images/avatar.png&lt;/span> &lt;span style="color:#75715e">#网站的 icon，你可以在根目录 /static/images/ 里面替换成自己的照片&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">options&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">showDarkMode&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span> &lt;span style="color:#75715e"># 是否使用切换黑暗模式&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">enableMultiLang&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span> &lt;span style="color:#75715e"># 是否展示多语言选择&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">languages&lt;/span>: &lt;span style="color:#75715e"># 如果你启用多语言，下面是中文展示&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">zh&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">languageName&lt;/span>: &lt;span style="color:#ae81ff">中&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">author&lt;/span>: &lt;span style="color:#ae81ff">Ladder 主题&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">authorDescription&lt;/span>: &lt;span style="color:#ae81ff">一个美观，快速并且专注于阅读的主题&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">info&lt;/span>: &lt;span style="color:#ae81ff">帮助开发者构建一个免费并且漂亮的博客网站，记录自己的思考并且提高自己的影响力&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="注释评论相关功能">注释评论相关功能&lt;/h3>
+&lt;p>准备好的仓库 &lt;a href="https://github.com/guangzhengli/hugo-ladder-exampleSite">hugo-ladder-exampleSite&lt;/a> 主要给大家快速搭建使用。如果大家都使用同一套评论配置的话，会给后续使用该教程的人带来一定的困扰，可以先将相关功能注释掉。如果想搭建自己独立的评论系统，可以参考这篇文章来搭建 &lt;a href="https://guangzhengli.com/blog/zh/how-to-create-your-blog-for-free-by-hugo-ladder-in-30min/">如何 30 分钟搭建一套完整独立博客&lt;/a>。&lt;/p>
+&lt;p>修改方案如下所示&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yml" data-lang="yml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">comments&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">giscus&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">enable&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>改为如下所示&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yml" data-lang="yml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">comments&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">giscus&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">enable&lt;/span>: &lt;span style="color:#66d9ef">false&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="如何添加和修改自己的博客文章">如何添加和修改自己的博客文章&lt;/h2>
+&lt;p>可以在根目录的 &lt;code>content/blog&lt;/code> 中找到该站点的 Demo 展示文章，可以选择新增一个 &lt;code>markdown&lt;/code> 文件添加自己想要表达的内容即可。&lt;/p>
+&lt;p>目前在文章头部，需要添加上这几个标签来配置文章的展示：&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>title&lt;/code>：文章标题。&lt;/li>
+&lt;li>&lt;code>date&lt;/code>: 发布时间。&lt;/li>
+&lt;li>&lt;code>tags&lt;/code>: 文章的标签，便于后续检索和查找类似文章。&lt;/li>
+&lt;li>&lt;code>series&lt;/code>: 系列文章，可以为空，便于在文章末尾相关文章推荐使用。&lt;/li>
+&lt;li>&lt;code>featured&lt;/code>: &lt;code>true&lt;/code> 或者 &lt;code>false&lt;/code>，是否在主页推荐中展示。&lt;/li>
+&lt;/ul>
+&lt;p>其次，可以通过添加 &lt;code>&amp;lt;!--more--&amp;gt;&lt;/code> 标签，标明哪些文字需要在博客的列表中外部展示用，哪些文字需要隐藏，如果不添加的话，会默认展示一定的字数。&lt;/p>
+&lt;h2 id="部署代码">部署代码&lt;/h2>
+&lt;h3 id="推送代码到自己的仓库">推送代码到自己的仓库&lt;/h3>
+&lt;p>在第一步时，我们创建了名为 &lt;code>username.github.io&lt;/code> 的仓库地址，可以使用下面命令先将指向仓库 &lt;a href="https://github.com/guangzhengli/hugo-ladder-exampleSite">hugo-ladder-exampleSite&lt;/a> 的远程 URL 先去除，再添加自己的地址。注意将下面命令中 &lt;code>username&lt;/code> 替换成自己的账号名称。&lt;/p>
+&lt;p>最后我们再推送我们的修改到自己的仓库。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>git remote remove origin
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git remote add origin https://github.com/username/username.github.io.git
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git add .
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git commit -m &lt;span style="color:#e6db74">&amp;#34;feat: init blog site&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git push origin main
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="部署-github-pages">部署 GitHub Pages&lt;/h3>
+&lt;p>确保我们推送成功后，我们会在 &lt;code>Actions&lt;/code> 中自动的将代码 build 成 GitHub Pages 需要的文件，可以到这个地址检查 &lt;code>workflow&lt;/code> 是否成功运行。注意将地址中 &lt;code>username&lt;/code> 替换成自己的账号名称。&lt;code>https://github.com/username/username.github.io/actions&lt;/code>。&lt;/p>
+&lt;p>如果 &lt;code>Actions&lt;/code> 运行成功的话，我们会有一个新的分支叫做 &lt;code>gh-pages&lt;/code>。这时候我们去仓库的设置中心 &lt;code>Settings&lt;/code> ，选择 &lt;code>Pages&lt;/code> ，之后将 &lt;code>Build and deployment&lt;/code> -&amp;gt; &lt;code>Source&lt;/code> 选择 &lt;code>Deploy from a branch&lt;/code>。后面的 &lt;code>Branch&lt;/code> 选择 &lt;code>gh-pages&lt;/code> 即可配置成功。&lt;/p>
+&lt;p>&lt;img src="https://storage.guangzhengli.com/images/cuQE65.jpg" alt="cuQE65">&lt;/p>
+&lt;p>这个时候，选择上方的 &lt;code>Visit site&lt;/code> 或者手动输入 &lt;code>https://username.github.io&lt;/code> 即可访问成功！ 🎉🎉🎉&lt;/p>
+&lt;p>如果部署时，有任何问题，可以在下方留言。&lt;/p></description></item></channel></rss>
