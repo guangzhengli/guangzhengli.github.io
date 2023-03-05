@@ -17,6 +17,7 @@ paginate: 10
 #   goldmark:
 #     renderer:
 #       unsafe: true
+hasCJKLanguage: true
 menu:
   main:
     - name: Blog
