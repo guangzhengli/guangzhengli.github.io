@@ -41,7 +41,7 @@ params:
   author: Guangzheng Li
   authorDescription: 'Welcome to my blog, contact me: iguangzhengli@gmail.com'
   info: 'A Full Stack Developer, Reading & Thinking, Truth & Freedom'
-  favicon: /images/avatar.png
+  favicon: /images/avatar.ico
   options:
     showDarkMode: true
     enableImgZooming: true
