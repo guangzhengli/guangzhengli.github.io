@@ -23,8 +23,8 @@ menu:
     - name: Blog
       url: /blog
       weight: 1
-    - name: Tags
-      url: /tags
+    - name: Life
+      url: /art
       weight: 2
     - name: Archive
       url: /archives
@@ -111,8 +111,8 @@ languages:
         - name: 文章
           url: /blog
           weight: 1
-        - name: 分类
-          url: /tags
+        - name: 即兴
+          url: /art
           weight: 2
         - name: 历史文章
           url: /archives
