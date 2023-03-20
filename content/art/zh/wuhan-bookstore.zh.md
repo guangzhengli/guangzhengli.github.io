@@ -2,7 +2,7 @@
 title: 武汉书店
 date: 2021-03-12T21:34:36+08:00
 tags: ["life", "bookstore", "photography"]
-series: ["life"]
+series: ["reading-writing"]
 image: "https://storage.guangzhengli.com/images/IMG_1027.jpg"
 desc: "封面来源于周末在武汉视觉书屋拍摄所得，从一个镂空的小窗可以看到整个书店的一角。"
 ---
