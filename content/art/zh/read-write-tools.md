@@ -38,7 +38,7 @@ desc: "介绍我的阅读和写作工具。"
 
 ### 本地
 
-那么如何在本地写文章呢？这就不得不提到 [Markdown 语法](https://www.markdownguide.org/)，这是一个通过轻量级标记实现自动排版的语言。笔者现在已经很难接受除了 Markdown 以外的、
+那么如何在本地写文章呢？这就不得不提到 [Markdown 语法](https://www.markdownguide.org/)，这是一个通过轻量级标记实现自动排版的语言。笔者现在已经很难接受除了 Markdown 以外的文字编辑器，诸如 Microsoft Word 或 Google Docs 之类的富文本编辑器。
 
 不过 Markdown 也有一个缺点，就是不能所见即所得。所以就需要一个专业的 Markdown 写作编辑器来实现所见即所得，目前笔者用过最好的 Markdown 写作编辑器还是 [Typora](https://typora.io/)。虽然 [Typora](https://typora.io/) 已经开始收费了，但是好在是买断制，笔者也就欣然接受了。除此之外还有开源的 [妙言](https://miaoyan.app/) 也是不错的平替。
 
@@ -60,7 +60,9 @@ desc: "介绍我的阅读和写作工具。"
 
 ### 书籍
 
-> **更新：阅读书籍的工具可以参考我的另外一篇文章：[把阅读作为方法](https://guangzhengli.com/blog/zh/reading/)。**
+> **更新：阅读书籍的收集工具可以参考我的另外一篇文章：[把阅读作为方法](https://guangzhengli.com/blog/zh/reading/)。**
+
+电子书下载目前使用 Zlibrary，阅读设备目前主力是 MBP 和 ipad mini5，阅读软件使用自带的 Books。
 
 ### 碎片信息
 
