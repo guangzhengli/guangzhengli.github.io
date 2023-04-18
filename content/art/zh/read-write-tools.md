@@ -87,7 +87,7 @@ desc: "介绍我的阅读和写作工具。"
 
 -   博客类的网站往往会有 RSS 源或者 newsletter 订阅，newsletter只需要用邮箱订阅即可，RSS 源我使用的是Chrome 插件 [RSSHub Reader](https://chrome.google.com/webstore/detail/rsshub-radar/kefjpfngnndepjbopdmoebkipbgkggaa) 来寻找，配合 [Netnewswire](https://netnewswire.com/) 来进行订阅和阅读。感兴趣试试下载插件后在本站能否复制 RSS 链接订阅。
     
--   使用 [cubox](https://cubox.pro/) 来进行一站式信息收集处理系统，负责收集不同类型的网站和资源
+-   使用 [cubox](https://cubox.pro/) 来进行一站式信息收集处理系统，负责收集不同类型的网站和资源。(2023--4-17更新，使用 [omivore](https://github.com/omnivore-app/omnivore) 替代)
     
 
 笔者认为对于收集碎片信息这一流程，使用什么工具并不重要，无论是使用移动设备上的备忘录顺手记录，还是专业的工具收集，即然都无法做到完美，那么不如将重心放到定期回顾碎片信息和整理上。无论是将它们和后续的输出计划整理到一起，或者是阅读后填充到笔记中，完善整个知识体系才是最终目标。
