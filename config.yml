@@ -49,6 +49,9 @@ params:
     showMetaTags: false
 #  darkModeTheme: icy-dark-mode
   darkModeTheme: data-dark-mode
+  sponsors:
+    title: Sponsors
+    description: Support me by becoming a sponsor
   comments:
     giscus:
       enable: true
