@@ -1,5 +1,5 @@
 ---
-title: 万字详解向量数据库
+title: 向量数据库
 date: 2023-07-15T15:15:00+08:00
 tags: ["llm", "gpt", "vector", "database"]
 series: ["GPT Development"]
