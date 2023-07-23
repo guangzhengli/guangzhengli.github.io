@@ -40,7 +40,11 @@ params:
   avatarURL: /images/avatar.png
   author: Guangzheng Li
   authorDescription: 'Welcome to my blog, contact me: iguangzhengli@gmail.com'
-  info: 'A Full Stack Developer, Reading & Thinking, Truth & Freedom'
+  info: |
+    A Full Stack Developer, Reading & Thinking
+
+    [RSS](https://guangzhengli.com/index.xml) ·
+    [Sponsor](https://guangzhengli.com/sponsors)
   favicon: /images/avatar.ico
   options:
     showDarkMode: true
@@ -116,7 +120,11 @@ languages:
     brand: 主页
     author: Guangzheng Li
     authorDescription: 阅读与思考，真理与自由
-    info: 一个还在重新学习，重塑思想的开发者 [RSS订阅](https://guangzhengli.com/index.xml)
+    info: |
+      一个还在重新学习，重塑思想的开发者
+
+      [RSS订阅](https://guangzhengli.com/index.xml) ·
+      [赞赏](https://guangzhengli.com/sponsors)
     guestbook:
       title: 留言板
       description: 您的评论，会让该网站更精彩！

@@ -2,8 +2,7 @@
 title: 用 serverless 开发一个 Chat 机器人提醒
 date: 2022-12-19
 tags: ["serverless", "cloudflare", "worker"]
-featured: true
-
+featured: false
 ---
 
 本文描述了笔者基于 Serverless 技术开发 Chat 机器人提醒应用的全流程，记录了开发遇到的一些问题和技术选择的思考。在开发完成后，有小伙伴想知道一些技术细节来做二次开发，于是有了这篇分享。
