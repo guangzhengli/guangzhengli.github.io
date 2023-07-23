@@ -294,7 +294,7 @@ $$\mathbf{A} \cdot \mathbf{B} = \sum_{i=1}^{n}A_i B_i$$
 
 除了选择专业的向量数据库，使用传统数据库进行扩展也是一种方法。类似 Redis 除了传统的 Key Value 数据库用途外，Redis 还提供了 Redis Modules，这是一种通过新功能、命令和数据类型扩展 Redis 的方式。例如使用 [RediSearch](https://redis.io/docs/interact/search-and-query/) 模块来扩展向量搜索的功能。
 
-同理的还有 ProgreSQL 的扩展，ProgreSQL 提供使用 extension 的方式来扩展数据库的功能，例如 [pgvector](https://github.com/pgvector/pgvector) 来开启向量搜索的功能。它不仅支持精确和相似性搜索，还支持余弦相似度等相似性测量算法。最重要的是，它是附加在 PostgreSQL 上的，因此可以利用 PostgreSQL 的所有功能，例如 ACID 事务、并发控制、备份和恢复等。还拥有所有的 PostgreSQL 客户端库，因此可以使用任何语言的 PostgreSQL 客户端来访问它。可以减少开发者的学习成本和服务的维护成本。
+同理的还有 PostgreSQL 的扩展，PostgreSQL 提供使用 extension 的方式来扩展数据库的功能，例如 [pgvector](https://github.com/pgvector/pgvector) 来开启向量搜索的功能。它不仅支持精确和相似性搜索，还支持余弦相似度等相似性测量算法。最重要的是，它是附加在 PostgreSQL 上的，因此可以利用 PostgreSQL 的所有功能，例如 ACID 事务、并发控制、备份和恢复等。还拥有所有的 PostgreSQL 客户端库，因此可以使用任何语言的 PostgreSQL 客户端来访问它。可以减少开发者的学习成本和服务的维护成本。
 
 像笔者的开源项目 [ChatFiles](https://github.com/guangzhengli/ChatFiles) 和 [VectorHub](https://github.com/guangzhengli/vectorhub) 目前就暂时使用 pgvector 来实现向量搜索以实现 GPT 文档问答，基于 [Supabase 提供的 PostgreSQL + pgvector](https://supabase.com/blog/openai-embeddings-postgres-vector) 服务完成。
 
