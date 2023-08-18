@@ -12,7 +12,9 @@
 &lt;h2 id="prompt-学习路线">Prompt 学习路线&lt;/h2>
 &lt;p>关于 Prompt 的基础知识，可以先去看看吴恩达老师的 &lt;a href="https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/">ChatGPT Prompt 工程&lt;/a>。可以通过两个小时不到的视频可以快速的了解 Prompt 的使用方式和它的魅力所在。&lt;/p>
 &lt;p>在有了一个初步的了解之后，笔者推荐 &lt;a href="https://www.promptingguide.ai/">Prompt Engineering Guide&lt;/a> 这份文档，该文档包含了大量的 Prompt 基础知识和未来的发展方向，对于 GPT 应用开发者来说，除了学习 Prompt 的基础知识之外，还可以从中获取到一些工程界和学术界对于 Prompt 的发展方向的思考，对于开发 AI 应用来说，这些思考弥足珍贵。&lt;/p>
-&lt;p>最后，非常推荐大家去看看 OpenAI 官方的 &lt;a href="https://platform.openai.com/docs/guides/gpt-best-practices">GPT 最佳实践&lt;/a> 这份文档，它是由 OpenAI 官方提供的 GPT 最佳实践指南，里面包含了大量的 Prompt 示例和使用技巧，对于 GPT 应用开发者来说，是一份非常有价值的文档。因为它是 OpenAI 官方通过合作伙伴或者 Hackathon 等不同的方式，在不同的业务领域 GPT 应用开发中总结出来的最佳实践，对于开发者来讲非常有启发价值！&lt;/p>
+&lt;p>最后，非常推荐大家去看看 OpenAI 官方的 &lt;a href="https://platform.openai.com/docs/guides/gpt-best-practices">GPT 最佳实践&lt;/a> 这份文档，它是由 OpenAI 官方提供的 GPT 最佳实践指南，里面包含了大量的 Prompt 示例和使用技巧，对于 GPT 应用开发者来说，是一份非常有价值的文档。因为它是 OpenAI 官方通过合作伙伴或者 Hackathon 等不同的方式，在不同的业务领域 GPT 应用开发中总结出来的最佳实践，对于开发者来讲非常有启发价值！下面是对这一份文档的摘录：&lt;/p>
+&lt;blockquote class="twitter-tweet">&lt;p lang="zh" dir="ltr">撰写清晰的 Prompt&lt;br>&lt;br>1⃣️：在问题中包含详细的信息，例如以下例子：&lt;br>&lt;br>不好的提问：总结会议记录。&lt;br>优秀的提问：将会议记录总结成一个段落。然后用 Markdown 列表的格式列举一下参与者们各自的要点。最后如果有的话，列出演讲者建议的下一步行动或行动项目。&lt;br>&lt;br>不好的提问：编写代码来计算斐波那契数列。…&lt;/p>&amp;mdash; Guangzheng Li (@iguangzhengli) &lt;a href="https://twitter.com/iguangzhengli/status/1668059021390266369?ref_src=twsrc%5Etfw">June 12, 2023&lt;/a>&lt;/blockquote>
+&lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
 &lt;h2 id="prompt-最佳实践">Prompt 最佳实践&lt;/h2>
 &lt;p>关于 Prompt 编写的最佳实践，最为推荐的当然是 OpenAI 官方出品的 &lt;a href="https://platform.openai.com/docs/guides/gpt-best-practices">GPT 最佳实践&lt;/a> 这份文档，但对于开发 GPT 应用来讲，笔者还是想结合这份最佳实践和一些自己的经验，给大家分享一些 GPT 开发的实践。&lt;/p>
 &lt;h3 id="清晰和详细">清晰和详细&lt;/h3>
@@ -21,10 +23,29 @@
 &lt;p>所以只需要这种输入两个字的输入方式是最简单和最高效的，毕竟就算多输入几个字 &lt;code>how to write python fibonacci&lt;/code> ，对于 Google 搜索引擎来讲，输出质量是相差不大的。&lt;/p>
 &lt;p>而如果你使用的是 GPT，像 &lt;code>python fibonacci&lt;/code> 这样的输入对于 GPT 来说是非常不友好的，因为它无法清晰的理解你的意图，所以它可能会给出一些不相关的结果（根据不同模型的质量会略有差异）。&lt;/p>
 &lt;p>但如果你输入的是 &lt;code>编写一个用 python 函数来高效地计算 fibonacci 数列。评论每一行代码以解释每一部分的作用以及为什么这样写&lt;/code>。这样的输入对于 GPT 来说就非常清晰和详细，它能够清晰的理解你的意图，所以它给出的结果也会更加准确，&lt;strong>在保证输出质量下限的同时，还可以提高输出质量的上限！&lt;/strong>&lt;/p>
-&lt;p>这和开发者以往使用 Google 等搜索引擎的经验是完全不同的，也是 GPT 开发者和使用者最容易忽视的地方。笔者在今年很早的时候开发 &lt;a href="https://github.com/guangzhengli/ChatFiles">ChatFiles&lt;/a> 项目时，曾匿名收集过使用者的 Prompt，可以说 95% 以上的使用者使用的都是非常简陋的 Prompt，甚至看起来有一种一字千金的感觉。所以当开发者开发 GPT 应用时，一定要注意 Prompt 的清晰和详细，这是保证 GPT 应用质量的关键。&lt;/p>
-&lt;p>未完待续&amp;hellip;&amp;hellip;&lt;/p>
+&lt;p>这和开发者以往使用 Google 等搜索引擎的经验是完全不同的，也是 GPT 开发者和使用者最容易忽视的地方。笔者在今年很早的时候开发 &lt;a href="https://github.com/guangzhengli/ChatFiles">ChatFiles&lt;/a> 项目时，曾匿名收集过使用者的 Prompt，发现 95% 以上的使用者使用的都是非常简单的 Prompt，简单的甚至看起来有一种一字千金的感觉。&lt;/p>
+&lt;p>所以当开发者开发 GPT 应用时，一定要注意 Prompt 的清晰和详细，多试几次，选择一个输出质量稳定和格式相同的 Prompt，这是保证 GPT 应用质量的关键。&lt;/p>
+&lt;h3 id="如何处理更加复杂的任务">如何处理更加复杂的任务&lt;/h3>
+&lt;p>相信所有开发者面对简单的场景任务，多花费一些时间来调整 Prompt，都能设计好程序的 Prompt 并得到不错的输出质量。但是面对复杂任务时，想要提高 GPT 的输出质量还需要两个非常重要的技巧：&lt;strong>让 GPT 推理而不是回答，和拆分任务进行引导&lt;/strong>。&lt;/p>
+&lt;h4 id="推理而不是回答">推理而不是回答&lt;/h4>
+&lt;p>推理而不是回答是指在 Prompt 中，要求 GPT 模型不要立即判断正确与否或者立刻给出答案，而是引导模型进行深入思考。可以要求其先列出对问题的各种看法，对任务进行拆分，说明每一步的推理依据，然后再得出最终结论。在 Prompt 中添加逐步推理的要求，能让语言模型投入更多时间逻辑思维，输出结果也将更可靠准确。&lt;/p>
+&lt;p>举一个&lt;a href="https://platform.openai.com/docs/guides/gpt-best-practices/tactic-instruct-the-model-to-work-out-its-own-solution-before-rushing-to-a-conclusion">OpenAI 官方的例子&lt;/a>，如果你需要 GPT 回答某一个学生的答案是否正确，Prompt 是 &lt;code>判断学生的解决方案是否正确&lt;/code>的话，面对复杂的计算问题和答案，GPT 有很大的概率会给出错误的答案，因为 GPT 并不会像人一样先进行推理答案再进行回答，而是会立即给出判断。在短暂的判断中，就无法给出正确的答案（就好比人类无法在短时间计算复杂数学一样）。&lt;/p>
+&lt;p>所以如果我们的 Prompt 是 &lt;code>首先自己解决问题，然后再将自己的解决方案与学生的解决方案进行比较，并评估学生的解决方案是否正确。在自己完成问题之前，不要确定学生的解决方案是否正确&lt;/code>。在 Prompt 中给出明确的引导和条件，就能够让 GPT 模型花费更多的时间推导答案，从而得到更加准确的结果。&lt;/p>
+&lt;h4 id="拆分任务">拆分任务&lt;/h4>
+&lt;p>拆分任务进行引导是指将一个复杂的任务拆分成多个子任务，然后分别引导 GPT 模型进行推理，最后将多个子任务的结果进行整合，得到最终的结果。这样做的好处是可以让 GPT 模型更加专注于一个子任务，从而提高输出质量。&lt;/p>
+&lt;p>举一个最简单的的例子，当你需要对一本书籍进行摘要的时候，GPT 直接进行摘要的效果并不好，我们可以使用一系列子任务来摘要每个部分。最后再汇总产生的摘要。&lt;/p>
+&lt;p>当然拆分任务也会带来一些新的问题，即当单个任务输出质量有问题时，整体的输出质量也会受其影响。加上目前的 token 费用不菲，拆分任务进行引导也会带来额外的成本。但是无论如何，目前关于如何设计和拆分复杂任务是所有 GPT 应用最需要思考，和维护自身 AI 应用护城河的核心问题，也是目前大模型 AI 框架像 LangChain 等项目的核心设计点，有空可以单独写一篇文章来讨论。&lt;/p>
+&lt;h3 id="使用技巧">使用技巧&lt;/h3>
+&lt;ul>
+&lt;li>提供少量示例(Few-Shot Prompting): 给模型一两个期望的输入输出样例，让模型了解我们的要求和期望的输出样式。&lt;/li>
+&lt;li>Prompt 中要求结构化输出：以 Json 的方式输出，这样可以方便后续程序的处理。&lt;/li>
+&lt;li>分隔符：使用分隔符像 &lt;code>&amp;quot;&amp;quot;&amp;quot;&lt;/code> 将不同的指令、上下文、输入隔离，防止系统的 Prompt 和用户输入的 Prompt 混淆冲突。&lt;/li>
+&lt;/ul>
+&lt;p>未完待续&amp;hellip;.&lt;/p>
 &lt;h2 id="gpt-embedding-应用开发">GPT Embedding 应用开发&lt;/h2>
 &lt;p>上一篇中，我们主要介绍了&lt;a href="https://guangzhengli.com/blog/zh/vector-database/">向量数据库&lt;/a>，&lt;/p>
+&lt;h2 id="gpt-应用需求分析">GPT 应用需求分析&lt;/h2>
+&lt;h3 id="非结构化输入和结构化输出">非结构化输入和结构化输出&lt;/h3>
 &lt;h2 id="references">References&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://github.com/guangzhengli/ChatFiles">https://github.com/guangzhengli/ChatFiles&lt;/a>&lt;/li>
