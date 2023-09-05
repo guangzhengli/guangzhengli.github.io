@@ -36,14 +36,21 @@
 &lt;p>举一个最简单的的例子，当你需要对一本书籍进行摘要的时候，GPT 直接进行摘要的效果并不好，我们可以使用一系列子任务来摘要每个部分。最后再汇总产生的摘要。&lt;/p>
 &lt;p>当然拆分任务也会带来一些新的问题，即当单个任务输出质量有问题时，整体的输出质量也会受其影响。加上目前的 token 费用不菲，拆分任务进行引导也会带来额外的成本。但是无论如何，目前关于如何设计和拆分复杂任务是所有 GPT 应用最需要思考，和维护自身 AI 应用护城河的核心问题，也是目前大模型 AI 框架像 LangChain 等项目的核心设计点，有空可以单独写一篇文章来讨论。&lt;/p>
 &lt;h3 id="使用技巧">使用技巧&lt;/h3>
+&lt;p>除了上述的一些比较重要的实践之外，还有一些小技巧对于开发应用也是非常有帮助，下面是笔者总结的一些使用技巧：&lt;/p>
 &lt;ul>
 &lt;li>提供少量示例(Few-Shot Prompting): 给模型一两个期望的输入输出样例，让模型了解我们的要求和期望的输出样式。&lt;/li>
-&lt;li>Prompt 中要求结构化输出：以 Json 的方式输出，这样可以方便后续程序的处理。&lt;/li>
-&lt;li>分隔符：使用分隔符像 &lt;code>&amp;quot;&amp;quot;&amp;quot;&lt;/code> 将不同的指令、上下文、输入隔离，防止系统的 Prompt 和用户输入的 Prompt 混淆冲突。&lt;/li>
+&lt;li>Prompt 中要求结构化输出：以 Json 的方式输出，这样可以方便后续代码程序处理。&lt;/li>
+&lt;li>分隔符：使用分隔符像 &lt;code>&amp;quot;&amp;quot;&amp;quot;&lt;/code> 将不同的指令、上下文之间进行隔离，防止系统的 Prompt 和用户输入的 Prompt 混淆冲突。&lt;/li>
 &lt;/ul>
-&lt;p>未完待续&amp;hellip;.&lt;/p>
 &lt;h2 id="gpt-embedding-应用开发">GPT Embedding 应用开发&lt;/h2>
-&lt;p>上一篇中，我们主要介绍了&lt;a href="https://guangzhengli.com/blog/zh/vector-database/">向量数据库&lt;/a>，&lt;/p>
+&lt;p>在上面我们主要介绍了基于 Prompt 如何开发 AI 应用，但是有时候我们还会遇到新的问题。例如大模型的训练数据往往是基于几个月前、甚至是几年前的，当我们有一些需求场景是需要 GPT 应用提供最新的数据，例如基于最近的新闻来回答问题，或者根据私有文档来回答问题，这时候大模型本身就没有基于这些材料进行过训练，也就无法解决该类问题。&lt;/p>
+&lt;p>这个时候我们可以通过让模型使用参考文本来回答问题，例如我们的 prompt 可以写成:&lt;/p>
+&lt;pre tabindex="0">&lt;code>你将会得到一个由三个引号分隔的文档和一个问题。
+你的任务是使用提供的文档回答问题，并引用用于回答问题的文本段落。
+如果文档中没有包含回答该问题所需的信息，则简单地写下：“信息不足”。
+如果提供问题的答案，必须附带引用注释。
+使用以下格式引用相关段落（{&amp;#34;citation&amp;#34;: …}）。
+&lt;/code>&lt;/pre>&lt;p>上一篇中，我们主要介绍了&lt;a href="https://guangzhengli.com/blog/zh/vector-database/">向量数据库&lt;/a>，&lt;/p>
 &lt;h2 id="gpt-应用需求分析">GPT 应用需求分析&lt;/h2>
 &lt;h3 id="非结构化输入和结构化输出">非结构化输入和结构化输出&lt;/h3>
 &lt;h2 id="references">References&lt;/h2>
