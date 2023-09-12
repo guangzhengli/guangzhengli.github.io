@@ -114,11 +114,13 @@ AI 应用开发在过去一段时间内吸引了众多开发者入场，除了�
 
 我们拿到问题本身和这段具有关联的参考文本，同时提交给 GPT，就能得到我们想要的答案。这个过程就是 GPT Embeddings 应用开发核心，它的核心思想是通过向量检索的方式检索与问题最相关的文本段，从而绕过 GPT tokens 的限制。
 
+![Embedding](https://storage.guangzhengli.com/images/Embedding.png)
+
+从上图中可以看到整个数据流转的过程。
 
 ## GPT 应用需求分析
 
 ### 非结构化输入和结构化输出
-
 
 
 ## References
