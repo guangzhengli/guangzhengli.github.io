@@ -55,7 +55,28 @@
 &lt;p>那么一旦需要的参考文本大于 3000 字，就无法一次性通过 GPT 得到答案，需要开发者想办法将参考文本拆分成多个部分，然后分别进行 GPT Embeddings 转化为向量存储到向量数据库中。关于向量数据库的更多信息，可以参考我另外一篇博客 &lt;a href="https://guangzhengli.com/blog/zh/vector-database/">向量数据库&lt;/a> ，当需要针对于参考文本进行提问时，需要先将问题转化为向量，然后通过向量数据库进行检索，最后再将检索到的向量转化为文本输出。这样就能得到符合 GPT tokens 限制的参考文本，并且这段参考文本是和问题具有关联的。&lt;/p>
 &lt;p>我们拿到问题本身和这段具有关联的参考文本，同时提交给 GPT，就能得到我们想要的答案。这个过程就是 GPT Embeddings 应用开发核心，它的核心思想是通过向量检索的方式检索与问题最相关的文本段，从而绕过 GPT tokens 的限制。&lt;/p>
 &lt;p>&lt;img src="https://storage.guangzhengli.com/images/Embedding.png" alt="Embedding">&lt;/p>
-&lt;p>从上图中可以看到整个数据流转的过程。&lt;/p>
+&lt;p>整体的开发流程如上图所示：&lt;/p>
+&lt;ol>
+&lt;li>加载文档，获取目标文本信息。例如 LLM 主流框架 LangChain 中 File Loader 和 Web Loader 的两种文本获取方式。
+&lt;ol>
+&lt;li>基于文件系统的 File Loader，如加载 PDF 文件、Word 文件等。&lt;/li>
+&lt;li>基于网络的 Web Loader，如某个网页，AWS S3 等。&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>将目标文本拆分为多个段落，拆分方式主要基于两种。
+&lt;ol>
+&lt;li>一种是基于文字数量的拆分法，例如 1000 字为一段，这种方式的优点是简单，缺点是可能会将一个段落拆分成多个段落，导致段落的连贯性变差，从而导致最终回答结果可能缺少上下文而降低回答质量。&lt;/li>
+&lt;li>另一种是基于标点符号的拆分法，例如以换行为分隔符，这种方式的优点是段落的连贯性好，缺点是每个段落大小不一，可能会导致触发 GPT tokens 的限制。&lt;/li>
+&lt;li>最后一种是基于 GPT tokens 限制的拆分法，例如以 2000 tokens 为一组，最终查询时搜索出最相关的两个段落，这样加到一起也才 4000 tokens,就不会触发到 4096 tokens 的限制。&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>将拆分的文本块统一存入 &lt;a href="https://guangzhengli.com/blog/zh/vector-database/">向量数据库&lt;/a> 中。&lt;/li>
+&lt;li>将用户问题转化为向量，然后通过向量数据库进行检索，得到最相关的文本段落。（需要注意的是，这里的检索并不是传统数据库的模糊匹配或者倒排索引，而是基于语义化的搜索能力，所以检索出的文本才能回答用户问题，详细请看另外一篇博客 [向量数据库](https://guangzhengli.com/blog/zh/vector-database/）&lt;/li>
+&lt;li>将检索出来的相关文本信息，用户问题和系统的 prompt 三个组合成一个针对于 Embeddings 场景的 Prompt，例如 Prompt 中明确写到使用参考文本回答问题，而不是 GPT 自己回答。&lt;/li>
+&lt;li>GPT 回答最终得到的 Prompt，得到最终的答案。&lt;/li>
+&lt;/ol>
+&lt;p>GPT embeddings 应用能解决某些场景下 GPT 无法回答的问题，这是他最大的优点。无需训练，无需微调，只需要将文本转化为向量再通过检索就能实现，以低成本的方式就能让某些业务场景变成可能。&lt;/p>
+&lt;p>但 GPT embeddings 方案同样会带来一些新的问题，例如 embeddings 文本拆分和检索的质量将在很大的程度上影响最终的结果。例如参考文本本身的质量问题，在原来，所有的文档都是面向人类编写，以后是否会存在专门面向 AI 编写的文本，让 AI 更好理解和更好符合数据库检索？这都是需要长期思考的问题。&lt;/p>
 &lt;h2 id="gpt-应用需求分析">GPT 应用需求分析&lt;/h2>
 &lt;p>上面是关于如何开发 GPT 应用的一些思考和技巧，但是如果想要创造产品，我们还是需要从业务需求出发，去思考我们能够创造出什么样的业务价值，从而满足当前潜在用户的需求。&lt;/p>
 &lt;h3 id="非结构化输入和结构化输出">非结构化输入和结构化输出&lt;/h3>
