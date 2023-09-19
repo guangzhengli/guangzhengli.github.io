@@ -1,10 +1,10 @@
 ---
 title: GPT 应用开发和思考
 date: 2023-07-31T20:10:00+08:00
-tags: ["llm", "gpt", "vector", "embeddings", "database", "chatbot"]
+tags: ["llm", "gpt", "vector", "embeddings", "database", "chatbot", "agent", "langchain"]
 series: ["GPT Development"]
 featured: true
-math: true
+math: false
 ---
 
 在过去几个月的时间中，我们似乎正处于人工智能的革命中。除了大多数人了解的 OpenAI ChatGPT 之外，许多非常新颖、有趣、实用的 AI 应用也是层出不穷，并且在使用这些应用时时，笔者也确确实实的感受到了生产力的提高。
@@ -129,9 +129,125 @@ AI 应用开发在过去一段时间内吸引了众多开发者入场，除了�
 5. 将检索出来的相关文本信息，用户问题和系统的 prompt 三个组合成一个针对于 Embeddings 场景的 Prompt，例如 Prompt 中明确写到使用参考文本回答问题，而不是 GPT 自己回答。
 6. GPT 回答最终得到的 Prompt，得到最终的答案。
 
+如果你对具体的实现代码感兴趣，可以去看看 LangChain 中关于 [Retrieval 的章节](https://js.langchain.com/docs/modules/data_connection/)。
+
 GPT embeddings 应用能解决某些场景下 GPT 无法回答的问题，这是他最大的优点。无需训练，无需微调，只需要将文本转化为向量再通过检索就能实现，以低成本的方式就能让某些业务场景变成可能。
 
-但 GPT embeddings 方案同样会带来一些新的问题，例如 embeddings 文本拆分和检索的质量将在很大的程度上影响最终的结果。例如参考文本本身的质量问题，在原来，所有的文档都是面向人类编写，以后是否会存在专门面向 AI 编写的文本，让 AI 更好理解和更好符合数据库检索？这都是需要长期思考的问题。
+但这个方案同样会带来一些新的问题，例如 embeddings 文本拆分和检索的质量将在很大的程度上影响最终的结果，还有查询范围、质量和查询时间该如何均衡，检索出的参考文本无法回答用户问题时该如何处理？这都是开发者在面对业务需求和场景时需要仔细思考的问题。
+
+如果思考更远一点，在人类过去的时间中，所有的文档都是面向人来编写，对于向量检索来说并不是最佳组织模式，以后是否会存在专门面向 AI 和检索编写的文本？让 AI 更好理解和更好符合数据库检索？不过这些问题需要长期的思考和论证，这里不再扩展。
+
+## GPT Agents 应用开发
+
+除了上述的 prompt 和 embeddings 两种方案能解决的业务需求外，GPT 应用开发还有一个非常常见的需求，即如何集成现有系统，或者说是如何集成现有 API。
+
+因为软件行业已经发展了很多年，很多公司都有自己的系统和 API，这些 API 能够极大的提高 GPT 应用的能力边界。如果 GPT 应用想要在实际生活场景中落地，是不可避免的需要和现有系统进行集成。
+
+就像如果你想要询问 GPT 一个非常简单的问题，今天北京的天气是什么？看完上面的章节，我们知道 GPT 自己是无法回答这类问题的，如果 GPT 能够自行调用某个天气 API，那么开发起来将非常的方便。
+
+想要实现 GPT 调用查询天气这个 API 的需求，我们会面临两个问题，一个是让 GPT 应用理解某个 API 的功能，并在它觉得合适的时候调用；另一个是输入输出必须结构化，从而保证系统的稳定性。
+
+### 理解和调用现有的 API
+
+想让 GPT 理解某个 API 的功能，最佳的方式当然是开发者手动给 API 添加名字和具体的描述信息，包括输入和输出值的结构，和每个字段代表着什么意思，这能很大程度上影响 GPT 的判断，最后决定是否调用该 API。
+
+如 OpenAI 官网中 [function calling 例子](https://openai.com/blog/function-calling-and-other-api-updates)中，关于调用天气 API 的描述如下所示。
+
+```
+function_descriptions = [
+            {
+                "name": "get_current_weather",
+                "description": "Get the current weather in a given location",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "location": {
+                            "type": "string",
+                            "description": "The city and state, e.g. San Francisco, CA",
+                        },
+                        "unit": {
+                            "type": "string",
+                            "description": "The temperature unit to use. Infer this from the users location.",
+                            "enum": ["celsius", "fahrenheit"]
+                        },
+                    },
+                    "required": ["location"],
+                },
+            }
+        ]
+```
+
+上面的方法详细描述了如果需要调用该函数，至少需要提供当前所在的位置信息，并且可以选择性的提供温度单位。GPT 会根据问题是否和该函数的描述相关联，来决定是否调用该函数。具体的代码细节以后有几乎再写一篇，暂时不展开。
+
+我们可以通过提供大量的 APIs 的说明文档，让 LLMs 理解并学会这些 APIs 的功能、使用方式、组合方式。最终达到根据提出的总体要求，将总体要求拆分为多个子任务，具体子任务再与某个 API 进行交互，最终达到自动化以及 AI 的目标。
+
+我们这里描述的现有 APIs 并不仅仅是基于 HTTP 的请求，可以包括转化为 SQL 查询数据库，调用 SDK 实现复杂功能，甚至在未来，可以扩展为调用物理世界里面的开关、机械臂等。个人认为，基于目前已有的 GPT 能力和发展趋势，人机交互的方式将产生巨大的变化。
+
+### 结构化输出
+
+除了让 GPT 理解和调用现有的 API 之外，还需要让 GPT 输出的结果能够被现有系统所理解，这就需要 GPT 输出的结果是结构化的，例如 JSON 格式的数据。
+
+那么你可能马上想到，我们通过 prompt 不就可以实现这种功能吗？在大部分情况下确实可以，但是有些少量的情况，prompt 并不如 function calling 的方式稳定，而我们传统的系统，对于稳定性的要求是非常高的，举个例子。
+
+```
+student_description=小王是北京大学计算机科学专业的二年级学生，绩点为 3.8 GPA。他的编程很厉害，是该大学机器人俱乐部的活跃成员。他希望在毕业后追求人工智能方面的工作。
+```
+
+这段话中，我们可以通过 prompt 来要求输出的结构为 json 格式，例如 prompt 为
+
+```
+Please extract the following information from the given text and return it as a JSON object:
+
+name
+major
+school
+grades
+club
+
+This is the body of text to extract the information from:
+{student_1_description}
+```
+
+但是比较难处理的是，我们没有办法能够确定 GPT 最终会输出的 grades 是 `3.8` 还是 `3.8 GPA`，这两种输出结果对于人类来讲没有如何区别，但是对于计算机来讲，这两种输出结果是完全不同的，前者是一个浮点数，后者是一个字符串。对于某些语言来讲转换就会直接出错。
+
+我们当然可以通过增加 prompt 的描述来减少这类问题，但是现实情况是比较复杂的，我们很难通过自然语言完全描述清楚需求，很难保证 GPT 的回答会每次都保持相同的输出。所以针对于这类问题，通过 OpenAI 提供的 function calling 的方式，能够在一定程度上解决自然语言与机器语言交互的问题。
+
+就像上述的问题可以描述为一个函数，我们将 grades 这个字段描述为 integer 来避免这类问题。这种结构化的能力对于开发一个稳定的系统是至关重要的。
+
+```
+student_custom_functions = [
+    {
+        'name': 'extract_student_info',
+        'description': 'Get the student information from the body of the input text',
+        'parameters': {
+            'type': 'object',
+            'properties': {
+                'name': {
+                    'type': 'string',
+                    'description': 'Name of the person'
+                },
+                'major': {
+                    'type': 'string',
+                    'description': 'Major subject.'
+                },
+                'school': {
+                    'type': 'string',
+                    'description': 'The university name.'
+                },
+                'grades': {
+                    'type': 'integer',
+                    'description': 'GPA of the student.'
+                },
+                'club': {
+                    'type': 'string',
+                    'description': 'School club for extracurricular activities. '
+                }
+                
+            }
+        }
+    }
+]
+```
 
 ## GPT 应用需求分析
 
@@ -155,3 +271,5 @@ NLP 技术又只能针对于某一些特定的场景，例如提取电话号码�
 
 - https://github.com/guangzhengli/ChatFiles
 - https://github.com/guangzhengli/vectorhub
+- https://js.langchain.com/docs/modules/data_connection/
+- https://openai.com/blog/function-calling-and-other-api-updates
