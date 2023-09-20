@@ -288,10 +288,10 @@ This is the body of text to extract the information from:
 &lt;p>但是在向量搜索中，我们的目的是为了找到相似的向量，所以可以专门设计一种哈希函数，使得哈希碰撞的概率尽可能高，并且位置越近或者越相似的向量越容易碰撞，这样相似的向量就会被映射到同一个桶中。&lt;/p>
 &lt;p>等搜索特定向量时，为了找到给定查询向量的最近邻居，使用相同的哈希函数将类似向量“分桶”到哈希表中。查询向量被散列到特定表中，然后与该表中的其他向量进行比较以找到最接近的匹配项。这种方法比搜索整个数据集要快得多，因为每个哈希表桶中的向量远少于整个空间中的向量数。&lt;/p>
 &lt;p>那么这个哈希函数应该如何设计呢？为了大家更好理解，我们先从二维坐标系解释，如下所图示，在二维坐标系中可以通过随机生成一条直线，将二维坐标系划分为两个区域，这样就可以通过判断向量是否在直线的同一边来判断它们是否相似。例如下图通过随机生成 4 条直线，这样就可以通过 4 个二进制数来表示一个向量的位置，例如 A 和 B 表示向量在同一个区域。&lt;/p>
-&lt;p>&lt;img src="https://storage.guangzhengli.com/images/lsh1.png" alt="lsh1">&lt;/p>
+&lt;p>&lt;img src="https://storage.guangzhengli.com/images/lsh2.png" alt="lsh2">&lt;/p>
 &lt;p>这个原理很简单，如果两个向量的距离很近，那么它们在直线的同一边的概率就会很高，例如直线穿过 AC 的概率就远大于直线穿过 AB 的概率。所以 AB 在同一侧的概率就远大于 AC 在同一侧的概率。&lt;/p>
-&lt;p>当搜索一个向量时，将这个向量再次进行哈希函数计算，得到相同桶中的向量，然后再通过暴力搜索的方式，找到最接近的向量。如下图如果再搜索一个向量经过了哈希函数，得到了 0110 的值，就会直接找到和它同一个桶中相似的向量 D。从而大大减少了搜索的时间。&lt;/p>
-&lt;p>&lt;img src="https://storage.guangzhengli.com/images/lsh.png" alt="lsh">&lt;/p>
+&lt;p>当搜索一个向量时，将这个向量再次进行哈希函数计算，得到相同桶中的向量，然后再通过暴力搜索的方式，找到最接近的向量。如下图如果再搜索一个向量经过了哈希函数，得到了 10 的值，就会直接找到和它同一个桶中相似的向量 D。从而大大减少了搜索的时间。&lt;/p>
+&lt;p>&lt;img src="https://storage.guangzhengli.com/images/lsh3.png" alt="lsh3">&lt;/p>
 &lt;p>关于更多 LSH 算法的细节，可以参考&lt;a href="https://www.pinecone.io/learn/series/faiss/locality-sensitive-hashing/">这篇博客&lt;/a>。&lt;/p>
 &lt;h4 id="random-projection-for-lsh-随机投影">Random Projection for LSH 随机投影&lt;/h4>
 &lt;p>如果在二维坐标系可以通过随机生成的直线区分相似性，那么同理，在三维坐标系中，就可以通过随机生成一个平面，将三维坐标系划分为两个区域。在多维坐标系中，同样可以通过随机生成一个超平面，将多维坐标系划分为两个区域，从而区分相似性。&lt;/p>
