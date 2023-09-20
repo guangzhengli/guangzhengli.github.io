@@ -25,11 +25,13 @@ AI 应用开发在过去一段时间内吸引了众多开发者入场，除了�
 
 我们知道 GPT（Generative Pre-trained Transformer）是一个推理模型，它主要基于预训练和微调两个阶段。
 
-在预训练阶段使用一个大规模的语料库，例如维基百科、新闻文章、小说等，当我们输入一个 Prompt 给它，它会基于这个 Prompt 给出一个预测的结果，这个结果是基于它在预训练阶段学习到的知识，并通过概率生成一个个的单词组合而来。这也是为什么相同的 Prompt 输入，每次的结果都会有所不同，因为每次的结果都是基于概率生成的，这也是它被称为生成式 AI 的原因。
+在预训练阶段会使用一个大规模的语料库进行基础训练，例如使用维基百科、新闻文章、小说等来进行训练。当训练完成后，输入一句话给它，它会基于这句话给出一个概率上的预测，预测后续应该拼接上什么单词，这个拼接的单词是基于它在预训练阶段学习到的知识来进行概率选定的，通过一次次循环的单词预测，最终可以拼接出一段话来。这也是它被称为生成式 AI 的原因。
 
-在预训练完成后，在微调阶段会将 GPT 模型加载到特定的任务上，并使用该任务的数据集对模型进行训练。这样，模型就可以根据任务的要求进行微调，以便更好地理解 Prompt 并生成与任务相关的文本。通过微调，GPT 可以适应不同的任务，如文本分类、情感分析、问答系统等。
+这一句话就是我们所说的 Prompt，也是生成式 AI 概率生成的基础。这能解释为什么我们每次输入相同的 Prompt，但是每次得到的结果都会有所不同，因为每次的结果都是基于概率生成的。
 
-所以这也就能理解为什么 Prompt 对于 GPT 应用开发的重要性，因为它是除了微调以外，我们能与 GPT 模型唯一的交互方式（当然除此之外还可以通过调整模型的 temperature 和 top_p 两个配置来控制 GPT 更多样化或更具创造性的输出，不过对于输出质量和对下游任务的处理能力并无明显影响）。所以 Prompt 是 GPT 应用开发最核心的部分，也是最需要开发者去思考和优化的部分。
+所以我们也就能理解为什么 Prompt 对于 GPT 应用开发的重要性，因为它是除了微调以外，我们能与 GPT 模型唯一的交互方式（当然除此之外还可以通过调整模型的 temperature 和 top_p 两个配置来控制 GPT 更多样化或更具创造性的输出，不过对于输出质量和对下游任务的处理能力并无明显影响）。所以 Prompt 是 GPT 应用开发最核心的部分，也是最需要开发者去思考和优化的部分。
+
+在预训练完成后，在微调阶段会将 GPT 模型加载到特定的任务上，并使用该任务的数据集对模型进行训练。这样，模型就可以根据任务的要求进行微调，以便更好地理解 Prompt 并生成与任务相关的文本。通过微调，GPT 可以适应不同的任务，如文本分类、情感分析、问答系统等。不过目前微调因为成本昂贵和最终效果并不稳定，对于广大 GPT 开发者来讲，并不是非常好的选择，所以目前大部分的 GPT 应用开发者都是基于 Prompt 来开发应用。
 
 ## Prompt 学习路线
 
@@ -77,7 +79,7 @@ AI 应用开发在过去一段时间内吸引了众多开发者入场，除了�
 
 拆分任务进行引导是指将一个复杂的任务拆分成多个子任务，然后分别引导 GPT 模型进行推理，最后将多个子任务的结果进行整合，得到最终的结果。这样做的好处是可以让 GPT 模型更加专注于一个子任务，从而提高输出质量。
 
-举一个最简单的的例子，当你需要对一本书籍进行摘要的时候，GPT 直接进行摘要的效果并不好，我们可以使用一系列子任务来摘要每个部分。最后再汇总产生的摘要。
+举一个不太恰当的例子，当你需要对一本书籍进行摘要的时候，GPT 直接进行总体的摘要的效果并不好，我们可以使用一系列子任务来摘要每个部分。最后再汇总产生的摘要。
 
 当然拆分任务也会带来一些新的问题，即当单个任务输出质量有问题时，整体的输出质量也会受其影响。加上目前的 token 费用不菲，拆分任务进行引导也会带来额外的成本。但是无论如何，目前关于如何设计和拆分复杂任务是所有 GPT 应用最需要思考，和维护自身 AI 应用护城河的核心问题，也是目前大模型 AI 框架像 LangChain 等项目的核心设计点，有空可以单独写一篇文章来讨论。
 
@@ -255,11 +257,29 @@ student_custom_functions = [
 
 上面主要是关于如何开发 GPT 应用的一些技巧，但是如果想要创造产品，我们还是需要从业务需求出发，去思考我们能够创造出什么样的业务价值，从而满足当前潜在用户的需求。
 
+> 2023/09/06 更新：LangChain 官方文档更新，将文档分为 RAG(RetrievalAugmentedGeneration) 和 Agents 两部分。这说明从 GPT 爆发几个月以来，工业界目前也觉得 RAG 和 Agents 是业务需求落地的两个方向。其中 RAG 就是我们上面主要讲的 GPT Embeddings 部分，后续我们会也从这两个方向举例说明。我觉得锚定像 langchain 这样的头部框架对于开发者来讲是非常有价值的，因为它们会在业务落地的过程中，总结出一些最佳实践和经验，这些经验对于开发者理解业务需求有很帮助。
+
+### 内容生成
+
+内容生成是目前最主流的需求，也是当前 AI 应用中流量统计最高的一个方向。除了 ChatGPT 这样大家所知的产品外，还有像 [Character AI](https://beta.character.ai/) 这样主要基于 Prompt 开发的人工智能伴侣（角色扮演类）应用流量也是非常的高。
+
+在更广泛的内容生成类中，图像生成领域如 [Midjourney](https://www.midjourney.com/)，语音生成领域如 [ElevenLabs](https://elevenlabs.io)。文字创意类领域如 [copy ai](https://www.copy.ai/)，还包括一些细分领域的文字内容生成，如小说生成辅助 [AI-Novel](https://ai-novel.com/) 等等。
+
+内容生成是当前互联网流量最高的 AI 需求领域，也是最容易落地的领域，因为它的应用场景非常广泛，内容生成辅助往往能够直接提高生产力，所以付费意愿往往不低，对于这个领域的争夺，往往也是最激烈的。
+
+### GPT Embeddings 需求
+
+GPT Embeddings 是我觉得是非常有潜在价值的方向，其中 [ChatFiles](https://github.com/guangzhengli/ChatFiles) 刚开源不久的时候，我就收到了一些的咨询，问能否在客服、销售、操作手册、知识库等场景下优化现有场景和业务，我个人的回答是 GPT Embeddings 在这些场景下是非常有前景的。
+
+这个领域目前能看到的创业企业像 [mendable ai](https://www.mendable.ai) 就已经占据了一定的市场份额，支持了像 [LangChain](https://js.langchain.com/) 等头部 GPT 框架的文档问答功能。并且还在积极扩展销售、客户等业务场景。
+
+除此之外，这个领域目前流量最高的当属于 [ChatPDF](https://www.chatpdf.com) 这个网站，可以上传 PDF 文件，然后基于 PDF 提出问题和需求如总结等。这个方向也衍生出各个细分领域的需求，如辅助论文阅读和协作的像 [Jenni AI](https://jenni.ai) 等。
+
 ### GPT Agents 需求
 
 GPT Agents 的需求五花八门的，因为它是基于现有系统的集成，所以我们可以通过分析现有系统的 API 来确定我们能够创造出什么样的业务价值。例如很多 GPT 提供的联网功能就是通过集成 SerpAPI 来实现的，这是一个集成了各大搜索引擎的聚合查询网站，这样就能够让 ChatGPT 能够回答一些基于搜索的问题，如当前天气、股市、新闻等等。
 
-其中比较出名的自然是 [AgentGPT](https://github.com/reworkd/AgentGPT) 这个项目，如果对开发 GPT Agents 应用感兴趣的小伙伴可以看看。
+其中比较出名的自然是 [Auto GPT](https://github.com/Significant-Gravitas/Auto-GPT) 和 [AgentGPT](https://github.com/reworkd/AgentGPT) 这两个项目，如果对 GPT Agents 应用感兴趣，不妨看看这两个项目。除此之外，也许像 [cal.com](https://github.com/calcom/cal.com/tree/main/apps/ai) 这样的公司集成 AI agents 来使用自然语言增强预定会议这样的功能，也许能够给你一些不一样的启发。
 
 ### 非结构化输入和结构化输出
 
@@ -286,7 +306,12 @@ NLP 技术又只能针对于某一些特定的场景，例如提取电话号码�
 
 - https://github.com/guangzhengli/ChatFiles
 - https://github.com/guangzhengli/vectorhub
-- https://js.langchain.com/docs/modules/data_connection/
+- https://js.langchain.com/docs/modules/data_connection
+- https://www.datacamp.com/tutorial/open-ai-function-calling-tutorial
 - https://openai.com/blog/function-calling-and-other-api-updates
 - https://openai.com/blog/chatgpt-plugins#code-interpreter
 - https://github.com/KillianLucas/open-interpreter
+- https://www.chatpdf.com
+- https://jenni.ai
+- https://github.com/reworkd/AgentGPT
+- https://a16z.com/how-are-consumers-using-generative-ai
