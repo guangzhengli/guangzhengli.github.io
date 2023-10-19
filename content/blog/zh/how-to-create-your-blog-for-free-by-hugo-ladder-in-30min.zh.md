@@ -85,7 +85,7 @@ cd my_website
 
 ```shell
 git init
-git submodule add https://github.com/guangzhengli/hugo-theme-ladder themes/ladder
+git submodule add https://github.com/guangzhengli/hugo-theme-ladder themes/hugo-theme-ladder
 ```
 
 因为个人偏爱 `yml` 的阅读习惯，所以本文使用 `yml` 而非默认的 `toml` 文件类型来配置，大家可以根据偏好到 [transform.tool](https://transform.tools/yaml-to-toml) 进行转换。
