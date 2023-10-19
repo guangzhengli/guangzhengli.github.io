@@ -1,7 +1,7 @@
 ---
 title: ChatGPT 应用开发和思考
 date: 2023-07-31T20:10:00+08:00
-tags: ["chatgpt", "llm", "gpt", "vector", "embeddings", "database", "chatbot", "agent", "langchain"]
+tags: ["chatgpt", "llm", "gpt", "vector", "embeddings", "database", "agent", "langchain"]
 series: ["GPT Development"]
 featured: true
 math: false
