@@ -87,7 +87,7 @@ create an empty git repository and make this repository a submodule of your site
 
 ```shell
 git init
-git submodule add https://github.com/guangzhengli/hugo-theme-ladder themes/ladder
+git submodule add https://github.com/guangzhengli/hugo-theme-ladder themes/hugo-theme-ladder
 ```
 
 Because of my personal preference for `yml` format reading, this theme uses `yml` instead of the default `toml` format type to configure, so you can go to [transform.tool](https://transform.tools/yaml-to-toml) to convert according to your preference.
