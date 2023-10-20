@@ -73,7 +73,7 @@ display: block;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd my_website
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>初始化你的项目目录为 git 仓库, 并且把主题仓库作为你的网站目录的子模块。&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>git init
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git submodule add https://github.com/guangzhengli/hugo-theme-ladder themes/ladder
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git submodule add https://github.com/guangzhengli/hugo-theme-ladder themes/hugo-theme-ladder
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>因为个人偏爱 &lt;code>yml&lt;/code> 的阅读习惯，所以本文使用 &lt;code>yml&lt;/code> 而非默认的 &lt;code>toml&lt;/code> 文件类型来配置，大家可以根据偏好到 &lt;a href="https://transform.tools/yaml-to-toml">transform.tool&lt;/a> 进行转换。&lt;/p>
 &lt;p>下面是本主题完整的 &lt;code>config.yml&lt;/code> 文件，大家可以删除根目录下默认的 &lt;code>config.toml&lt;/code> 文件，新建一个 &lt;code>config.yml&lt;/code> 文件代替。&lt;/p>
 &lt;p>

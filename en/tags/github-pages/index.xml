@@ -58,7 +58,7 @@ display: block;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd my_website
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>create an empty git repository and make this repository a submodule of your site directory:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>git init
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git submodule add https://github.com/guangzhengli/hugo-theme-ladder themes/ladder
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git submodule add https://github.com/guangzhengli/hugo-theme-ladder themes/hugo-theme-ladder
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Because of my personal preference for &lt;code>yml&lt;/code> format reading, this theme uses &lt;code>yml&lt;/code> instead of the default &lt;code>toml&lt;/code> format type to configure, so you can go to &lt;a href="https://transform.tools/yaml-to-toml">transform.tool&lt;/a> to convert according to your preference.&lt;/p>
 &lt;p>Here is all configuration in the &lt;code>config.yml&lt;/code>, you can delete the default &lt;code>config.toml&lt;/code> file in the root directory and create a new &lt;code>config.yml&lt;/code> file instead.&lt;/p>
 &lt;p>
