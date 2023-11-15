@@ -1,5 +1,5 @@
 ---
-title: ChatGPT 应用开发和思考
+title: GPT 应用开发和思考
 date: 2023-07-31T20:10:00+08:00
 tags: ["chatgpt", "llm", "gpt", "vector", "embeddings", "database", "agent", "langchain"]
 series: ["GPT Development"]
@@ -9,11 +9,11 @@ math: false
 
 在过去几个月的时间中，我们似乎正处于人工智能的革命中。除了大多数人了解的 OpenAI ChatGPT 之外，许多非常新颖、有趣、实用的 AI 应用也是层出不穷，并且在使用这些应用时时，笔者也确确实实的感受到了生产力的提高。
 
-但是关于 ChatGPT 应用的开发知识和路线，目前似乎还没有太多的资料，所以笔者决定将自己的一些经验和思考整理成一个系列，希望能够帮助到大家。
+但是关于 GPT 应用的开发知识和路线，目前似乎还没有太多的资料，所以笔者决定将自己的一些经验和思考整理成一个系列，希望能够帮助到大家。
 
 <!--more-->
 
-本篇文章主要介绍的是 ChatGPT 相关应用的开发思考，在今年 4 月份的时候，笔者因为开发 [ChatFiles](https://github.com/guangzhengli/ChatFiles) 这个开源项目，从而学习了 GPT 相关的技术知识，但是由于笔者的时间精力有限，所以一直没有机会将这些知识整理成一篇文章，直到最近笔者又因为有了新的想法，开源了 [VectorHub](https://github.com/guangzhengli/vectorhub) 这个同样基于 GPT Prompt 和 Embeddings 技术的项目，进而对 GPT 和 Embeddings 等技术知识有了更深入的了解，所以就有了这一篇分享。
+本篇文章主要介绍的是 GPT 相关应用的开发思考，在今年 4 月份的时候，笔者因为开发 [ChatFiles](https://github.com/guangzhengli/ChatFiles) 这个开源项目，从而学习了 GPT 相关的技术知识，但是由于笔者的时间精力有限，所以一直没有机会将这些知识整理成一篇文章，直到最近笔者又因为有了新的想法，开源了 [VectorHub](https://github.com/guangzhengli/vectorhub) 这个同样基于 GPT Prompt 和 Embeddings 技术的项目，进而对 GPT 和 Embeddings 等技术知识有了更深入的了解，所以就有了这一篇分享。
 
 ## 从 Prompt 开始
 
