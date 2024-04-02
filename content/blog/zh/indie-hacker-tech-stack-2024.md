@@ -76,6 +76,30 @@ shadcn/ui 与常见的 Ant Design 和 Chakra 等 Component library 不同，它�
 
 另外还有一些常见的值得一试的 UI 框架还有：[daisyui](https://daisyui.com/) 和 [chakraui](https://chakra-ui.com/)。 
 
+## Backend
+
+### Cloudflare Worker
+
+### Railway & Fly.io
+
+## Auth
+
+### Auth0
+
+### Supabase Auth
+
+### Cloudflare Zero Trust
+
+## Database
+
+### Supabase
+
+### D1
+
+## Lemonsquzz
+
+https://www.lemonsqueezy.com/
+
 ## References
 
 - https://nextjs.org
