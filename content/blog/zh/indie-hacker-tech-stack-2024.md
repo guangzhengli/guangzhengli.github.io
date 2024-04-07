@@ -177,7 +177,7 @@ shadcn/ui 与常见的 Ant Design 和 Chakra 等 Component library 不同，它�
 
 对于数据观测来讲，一般有业务上的数据分析，例如访问量、哪个页面点击多、哪个功能受欢迎等等。也有技术上的数据分析，例如网站的性能、日志报错分析等。这里推荐几个比较好用的数据分析工具。
 
-### [Umami](https://umami.is/) & [clarity](https://clarity.microsoft.com/)
+### [Umami](https://umami.is/) / [clarity](https://clarity.microsoft.com/)
 
 对于网站的分析，我推荐使用 [Umami](https://umami.is/)，它是一个开源的网站分析工具，可以免费托管在 Vercel + Supabase 上，通过引入 script 来自己进行数据收集，不需要担心数据泄露和隐私问题。
 
