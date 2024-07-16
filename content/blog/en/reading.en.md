@@ -18,9 +18,9 @@ As time passed and I encountered more complex subjects and obscure knowledge, I 
 
 Initially, there wasn't much information on the internet, and all my reading activities were based on the university library's collection. Most of the time, I read novels by authors like Wang Xiaobo, Yu Hua, Camus, and Hemingway. At that time, I believed that casual and random reading was a lifestyle; you didn't need to remember what you read, just like you didn't need to remember what you ate on a particular day. These things had already become part of your body and spirit. This change was nourishing and growth-oriented, so there was no need to force it.
 
-I still believe this theory has its merits, but as I grew older and encountered more disciplines and theories, this casual reading habit revealed its flaws. The first time I felt the strain was during my sophomore year when I encountered economics. Out of interest, I borrowed Mankiw's [Principles of Economics](https://book.douban.com/subject/26435630/) and read both volumes in one go. Although I felt my worldview was reshaped during the reading process, and I experienced the joy of having a method to deconstruct the world for the first time, I felt empty after finishing the book. It felt like the knowledge was floating away like clouds. This was completely different from the mindset after finishing literature or novels.
+I still believe this theory has its merits, but as I grew older and encountered more disciplines and theories, this casual reading habit revealed its flaws. The first time I felt the strain was during my sophomore year when I encountered economics. Out of interest, I borrowed Mankiw's [Principles of Economics] and read both volumes in one go. Although I felt my worldview was reshaped during the reading process, and I experienced the joy of having a method to deconstruct the world for the first time, I felt empty after finishing the book. It felt like the knowledge was floating away like clouds. This was completely different from the mindset after finishing literature or novels.
 
-It wasn't until I read [How to Read a Book](https://book.douban.com/subject/1013208/) that I realized different types of books require different reading methods. For example, not seeking a deep understanding when reading novels and literature might be beneficial, but when reading professional books, if you don't outline and conduct thematic reading, you can't say you've read the book well.
+It wasn't until I read [How to Read a Book] that I realized different types of books require different reading methods. For example, not seeking a deep understanding when reading novels and literature might be beneficial, but when reading professional books, if you don't outline and conduct thematic reading, you can't say you've read the book well.
 
 > Thematic reading, also known as comparative reading, is the most demanding and challenging type of reading. Thematic reading involves reading multiple materials around a specific theme and comparing and analyzing them. The goal of thematic reading is not to fully understand any particular text but to deepen the understanding of a specific theme.
 
@@ -46,21 +46,18 @@ Instead of starting with a vast sea of classic books, starting from your interes
 
 If you don't have a specific book in mind and are unsure about your interests, try visiting a bookstore. Compared to online recommendations and e-books, physical books provide more direct feedback. Flipping through the table of contents and general content can quickly tell you if you're interested in that type of book.
 
-Due to pressure and competition, existing independent bookstores have unique considerations for book display and arrangement. Regularly checking the popular recommendation sections can quickly help you find newly published good books. Independent bookstores often have strong personalities, such as specific categories or authors. You can refer to my article on [wandering around Wuhan bookstores](https://guangzhengli.com/art/zh/wuhan-bookstore/). The photo below was taken at Wuhan Visual Bookstore, where the entire store is filled with art books:
-
-![IMG_1025](https://storage.guangzhengli.com/images/IMG_1025.jpeg)
+Due to pressure and competition, existing independent bookstores have unique considerations for book display and arrangement. Regularly checking the popular recommendation sections can quickly help you find newly published good books. Independent bookstores often have strong personalities.
 
 ### Finding Books
 
-If you're not interested in visiting bookstores, you can find interesting subjects online through quality book lists, such as [Douban Top250](https://book.douban.com/top250), which features many time-tested classic books. If you're interested in new books, following specific field bloggers might help.
+If you're not interested in visiting bookstores, you can find interesting subjects online through quality book lists, which features many time-tested classic books. If you're interested in new books, following specific field bloggers might help.
 
 In the early stages of reading, I suggest not worrying too much about whether the book is excellent. If you're slightly interested, you can use inspectional reading (skimming) to judge whether a book is worth reading. Only by reading can you know if the book interests you and is worth reading. If you're not interested in the theme, you can always switch to another book.
 
 If you already have an interesting subject or book in mind, you can find more related books through the following methods:
 
-- What other books has the author written? For example, if you're interested in [Sapiens: A Brief History of Humankind](https://book.douban.com/subject/25985021/), you're likely to enjoy Yuval Noah Harari's trilogy.
-- Which publisher released the book? For example, books published by [Life·Reading·New Knowledge Sanlian Bookstore](https://book.douban.com/press/2158), which I like, are generally of high quality.
-- What Douban book lists or collections include this book? For example, after reading [The Course of Beauty](https://book.douban.com/subject/3410718/), I became interested in Chinese aesthetics and intellectual history and discovered new fields through the [Aesthetics and Aesthetic](https://www.douban.com/doulist/1682019/) Douban list.
+- What other books has the author written? For example, if you're interested in [Sapiens: A Brief History of Humankind], you're likely to enjoy Yuval Noah Harari's trilogy.
+- Which publisher released the book? 
 - Many authors include their recommended and reference books in the preface or at the end. Follow these recommendations to find more books.
 
 ## The Journey of Collection
@@ -91,14 +88,6 @@ Next, organize views through the database, listing `currently reading`, `want to
 
 ![screenshotr_2023-3-19T16-57-50](https://storage.guangzhengli.com/images/screenshotr_2023-3-19T16-57-50.png)
 
-Once you have created a database, you can start saving books automatically. Currently, the most comprehensive source of Chinese book information is [Douban Books](https://book.douban.com/), so we build an automation process for Douban books. By downloading the Chrome extension [Save to Notion](https://chrome.google.com/webstore/detail/save-to-notion/ldmmifpegigmeammaeckplhnjbbpccmm), entering a book's page on Douban, clicking the Notion Saver icon, configuring the book database and corresponding fields, and clicking Save, you can easily save the book. The configuration is shown below:
-
-![iIlR0O](https://storage.guangzhengli.com/images/iIlR0O.png)
-
-The entire automation saving process is shown in the GIF below (you can right-click to open in a new tab for repeated viewing):
-
-![db061686-c348-4325-b3e5-d11632c7a396](https://storage.guangzhengli.com/images/db061686-c348-4325-b3e5-d11632c7a396.gif)
-
 ## Planning Reading
 
 From the previous text, you can see that I used to be a fan of random reading. The main factor that led me to planned reading was the need for thematic reading. When you need to view a theory or phenomenon dialectically, relying on one author's perspective often leads to bias. One book often can't provide a complete view of knowledge.
@@ -107,13 +96,9 @@ Therefore, we need to obtain different authors' and perspectives on the same iss
 
 > In the past, I easily idolized a book or author while reading, but after a few years, rereading the book often led to disappointment, and I couldn't understand why I was so passionate about it. Later, no matter how reasonable or excellent a book was, I kept a certain distance.
 
-Additionally, some knowledge has high thresholds. If you don't read in order, it can lead to ineffective reading and loss of interest. For example, if you know nothing about Ming history and directly read "1587, A Year of No Significance," the subtle connections in the book might be overlooked, leading to a completely different evaluation. Similarly, many philosophical theories build on or critique predecessors, so skipping earlier theories can lead to confusion.
+Additionally, some knowledge has high thresholds. If you don't read in order, it can lead to ineffective reading and loss of interest. Many philosophical theories build on or critique predecessors, so skipping earlier theories can lead to confusion.
 
 Therefore, making a reading plan helps build a personal knowledge system. Planning reading doesn't mean planning how many books to read in a year or month but clarifying the areas of interest, listing themed book lists, and setting a reading order.
-
-For books, you can create a new page in Notion to store book lists, such as the economics book list below. You can also find this page in the [Guangzheng Book Template](https://guangzhengli.notion.site/Guangzheng-Book-Template-a446554b015748deb4c61559f99f9bf8):
-
-![screenshotr_2023-3-19T18-31-29](https://storage.guangzhengli.com/images/screenshotr_2023-3-19T18-31-29.png)
 
 Once the plan is made, the number of books in the planned list is often more than what can be read. At this point, you can continue to trim the list to ensure the quality of the reading content.
 
@@ -185,4 +170,21 @@ Only when I struggle to find words while sharing do I face my ignorance. Only wh
 
 So perhaps only through sharing and teaching can we face ignorance and shallowness. Even through practical action and unity of knowledge and action can we fully grasp knowledge.
 
-How should we share? Having friends to share, discuss,
+So how do we share? It is definitely a great joy in life to have friends around us to share, discuss and debate. If not, it doesn't matter. In the era of the Internet, we can publish articles, such as on our own blogs or online platforms. We can also expand by making videos or holding sessions to find more like-minded friends.
+
+## Summary
+
+Looking back at all the content above, we have derived some processes to assist reading from the need for theme reading. However, all tools and processes can only serve as auxiliary means. Remember not to lose sight of the big picture and get caught up in the vortex of tools.
+
+The only valuable thing about reading methodology is reading itself. Reading one book's content multiple times is more valuable than spending time on reading tools, methods and processes.
+
+There is no universal method of reading for everyone in the world. The method itself represents strong personality traits and preaching. If you have better or more suitable methods, you can discuss them with each other in comments.
+
+This article was written on the eve of a disruptive productivity revolution when OpenAI just released its GPT-4 model. Throughout modern history since industrial revolution, we may be on the eve of steam engine or information technology revolution; with changes in productivity comes increased social unrest - inflation, unemployment and war are products at this bottom point of Kondratiev cycle (economic wave). The harder times are，the more precious thinking becomes especially because AI cannot replace thinking itself
+
+## Reference
+
+1. https://sspai.com/post/78133
+2. https://book.douban.com/top250
+3. https://galaxy.opensyllabus.org/
+4. How to Read a Book"
