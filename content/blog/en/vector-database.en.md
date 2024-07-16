@@ -9,7 +9,7 @@ math: true
 
 You might have recently heard news like a startup focusing on vector databases securing millions in investment just after finishing their PPT, or an open-source vector database making headlines on Hackernews due to its simplistic code. Over the past few months, the development of AI applications has been booming, driving the entire AI tech stack, with vector databases being one of the hottest topics.
 
-Recently, while developing two open-source projects, [ChatFiles](https://github.com/guangzhengli/ChatFiles) and [VectorHub](https://github.com/guangzhengli/vectorhub), I delved into vector databases. After gaining a general understanding of mainstream vector databases and search algorithms, I decided to compile this knowledge into an article to help others.
+Recently, while developing an open-source projects, [ChatFiles](https://github.com/guangzhengli/ChatFiles), I delved into vector databases. After gaining a general understanding of mainstream vector databases and search algorithms, I decided to compile this knowledge into an article to help others.
 
 <!--more-->
 
@@ -137,16 +137,193 @@ Using the PQ algorithm can significantly reduce memory consumption and speed up 
 
 ### Hierarchical Navigable Small Worlds (HNSW)
 
-In addition to clustering, approximate nearest neighbor search can also be achieved by constructing trees or graphs. The basic idea of this method is to find the nearest vector to the vector being added to the database and then connect them, forming a graph. When searching, start from a node in the graph, continuously perform nearest neighbor search and shortest path calculation until the most similar vector is found.
+Apart from clustering, approximate nearest neighbor search can also be achieved by constructing trees or graphs. The basic idea is to add vectors to the database by first finding the nearest vector and then connecting them, forming a graph. When searching, you can start from a node in the graph and continuously perform nearest neighbor searches and shortest path calculations until you find the most similar vector.
 
-This algorithm can ensure search quality, but if all nodes in the graph are connected by the shortest path, as in the bottom layer of the graph, all nodes need to be traversed during the search.
+This algorithm ensures search quality, but if all nodes in the graph are connected by the shortest path, as in the bottom layer of the graph, you still need to traverse all nodes during the search.
 
 ![GD7ufK](https://storage.guangzhengli.com/images/GD7ufK.jpg)
 
-The solution to this problem is similar to the common skip list algorithm. As shown in the figure below, to search a skip list, start from the highest level and move to the right along the longest "skip" edge. If the current node's value is greater than the value being searched for, we know we have passed the target, so we move to the previous node at the next level.
+To solve this problem, the approach is similar to the common skip list algorithm. As shown in the figure, to search a skip list, you start from the highest level and move right along the longest "skip" edges. If the current node's value exceeds the target, you move down one level and continue.
 
 ![wOu6JL](https://storage.guangzhengli.com/images/wOu6JL.jpg)
 
-HNSW inherits the same hierarchical format, with the highest level having longer edges (for fast search) and the lower levels having shorter edges (for accurate search).
+HNSW inherits the same layered format, with longer edges at the top layer for fast searches and shorter edges at the lower layers for accurate searches.
 
-Specifically, the graph can be divided into multiple layers, each layer being a small world where nodes are interconnected. Each layer's nodes are also connected to the nodes of the previous layer.
+Specifically, the graph can be divided into multiple layers, each being a small world where nodes are interconnected. Each layer's nodes connect to the nodes in the layer above. When searching, you start from the top layer, where the distances between nodes are long, reducing search time, and then search layer by layer downwards. The bottom layer ensures search quality by connecting similar nodes, allowing you to find the most similar vector.
+
+If you're interested in skip lists and HNSW, check out [this video](https://www.youtube.com/watch?v=QvKMwLjdK-s&t=168s&ab_channel=JamesBriggs).
+
+The HNSW algorithm is a classic space-for-time algorithm, offering high search quality and speed but with significant memory overhead. This is because it needs to store all vectors in memory and maintain a graph structure. Therefore, the choice of this algorithm depends on the actual scenario.
+
+### Locality Sensitive Hashing (LSH)
+
+Locality Sensitive Hashing (LSH) is another indexing technique for approximate nearest neighbor search. It is fast and provides approximate, non-exhaustive results. LSH uses a set of hash functions to map similar vectors into "buckets," so similar vectors have the same hash value. This allows you to determine vector similarity by comparing hash values.
+
+Typically, we design hash algorithms to minimize hash collisions because the search time complexity of hash functions is O(1). However, if a hash collision occurs, meaning two different keys are mapped to the same bucket, data structures like linked lists are used to resolve conflicts, making the search time complexity O(n), where n is the length of the list. To improve the efficiency of hash functions, we usually minimize the probability of collisions.
+
+But in vector search, our goal is to find similar vectors, so we can design a hash function that maximizes the probability of collisions for similar vectors. This way, similar vectors are mapped to the same bucket.
+
+When searching for a specific vector, the same hash function is used to "bucket" similar vectors into a hash table. The query vector is hashed into a specific table, and then compared with other vectors in that table to find the closest match. This method is much faster than searching the entire dataset because each hash table bucket contains far fewer vectors than the entire space.
+
+How should this hash function be designed? To better understand, let's start with a 2D coordinate system. As shown below, a random line can divide the 2D coordinate system into two regions, allowing us to determine similarity by checking if vectors are on the same side of the line. For example, the figure below shows four randomly generated lines, allowing a vector's position to be represented by four binary numbers, such as A and B being in the same region.
+
+![lsh2](https://storage.guangzhengli.com/images/lsh2.png)
+
+The principle is simple: if two vectors are close, they are more likely to be on the same side of the line. For example, the probability of a line passing through AC is much higher than passing through AB, so the probability of AB being on the same side is much higher than AC.
+
+When searching for a vector, the vector is hashed again, and vectors in the same bucket are found. Then, a brute-force search is used to find the closest vector. As shown below, if a vector is hashed to 10, similar vectors like D in the same bucket are found, greatly reducing search time.
+
+![lsh3](https://storage.guangzhengli.com/images/lsh3.png)
+
+For more details on the LSH algorithm, refer to [this blog](https://www.pinecone.io/learn/series/faiss/locality-sensitive-hashing/).
+
+#### Random Projection for LSH
+
+If a random line can distinguish similarity in a 2D coordinate system, similarly, a random plane can divide a 3D coordinate system into two regions. In a multi-dimensional coordinate system, a random hyperplane can divide the space into two regions to distinguish similarity.
+
+However, in high-dimensional space, the distance between data points is often very sparse, and the distance increases exponentially with dimensions. This results in many buckets, with the extreme case being one vector per bucket, making computation very slow. Therefore, in practice, LSH algorithms use random projection to project high-dimensional data points into lower-dimensional space, reducing computation time and improving query quality.
+
+The basic idea behind random projection is to use a random projection matrix to project high-dimensional vectors into lower-dimensional space. A matrix of random numbers is created, with the size being the desired target low-dimensional value. Then, the dot product between the input vector and the matrix is calculated, resulting in a projected matrix with fewer dimensions but retaining their similarity.
+
+When querying, the same projection matrix is used to project the query vector into lower-dimensional space. The projected query vector is then compared with the projected vectors in the database to find the nearest neighbor. Since the data dimensions are reduced, the search process is much faster than searching the entire high-dimensional space.
+
+The basic steps are:
+
+1. Randomly select a hyperplane from the high-dimensional space and project data points onto it.
+2. Repeat step 1, selecting multiple hyperplanes and projecting data points onto them.
+3. Combine the projection results of multiple hyperplanes into a vector representing the low-dimensional space.
+4. Use a hash function to map the vectors in the low-dimensional space into hash buckets.
+
+Similarly, random projection is an approximate method, and the projection quality depends on the projection matrix. Generally, the more random the projection matrix, the better the mapping quality. However, generating truly random projection matrices can be computationally expensive, especially for large datasets. For more details on the RP for LSH algorithm, refer to [this blog](https://www.pinecone.io/learn/series/faiss/locality-sensitive-hashing-random-projection/).
+
+## Similarity Measurement
+
+We have discussed different search algorithms for vector databases, but not how to measure similarity. In similarity search, the distance between two vectors is calculated to determine their similarity.
+
+How do we calculate the distance between vectors in high-dimensional space? There are three common vector similarity algorithms: Euclidean distance, cosine similarity, and dot product similarity.
+
+### Euclidean Distance
+
+Euclidean distance refers to the distance between two vectors, calculated as:
+
+$$d(\mathbf{A}, \mathbf{B}) = \sqrt{\sum_{i=1}^{n}(A_i - B_i)^2}$$
+
+where $\mathbf{A}$ and $\mathbf{B}$ represent two vectors, and $n$ represents the vector's dimensions.
+
+![KPhJ27](https://storage.guangzhengli.com/images/KPhJ27.jpg)
+
+The advantage of the Euclidean distance algorithm is that it reflects the absolute distance between vectors, suitable for similarity calculations that consider vector length. For example, in recommendation systems, the number of historical user behaviors needs to be considered, not just the similarity of behaviors.
+
+### Cosine Similarity
+
+Cosine similarity refers to the cosine value of the angle between two vectors, calculated as:
+
+$$\cos(\theta) = \frac{\mathbf{A} \cdot \mathbf{B}}{|\mathbf{A}| |\mathbf{B}|}$$
+
+where $\mathbf{A}$ and $\mathbf{B}$ represent two vectors, $\cdot$ represents the dot product, and $|\mathbf{A}|$ and $|\mathbf{B}|$ represent the magnitudes of the vectors.
+
+![fHLAfz](https://storage.guangzhengli.com/images/fHLAfz.jpg)
+
+Cosine similarity is insensitive to vector length and only focuses on direction, making it suitable for high-dimensional vector similarity calculations, such as semantic search and document classification.
+
+### Dot Product Similarity
+
+Dot product similarity refers to the dot product value between two vectors, calculated as:
+
+$$\mathbf{A} \cdot \mathbf{B} = \sum_{i=1}^{n}A_i B_i$$
+
+where $\mathbf{A}$ and $\mathbf{B}$ represent two vectors, and $n$ represents the vector's dimensions.
+
+![kyA3AN](https://storage.guangzhengli.com/images/kyA3AN.jpg)
+
+The advantage of the dot product similarity algorithm is its simplicity, fast computation, and consideration of both vector length and direction. It is suitable for many practical scenarios, such as image recognition, semantic search, and document classification. However, the dot product similarity algorithm is sensitive to vector length, which may cause issues when calculating high-dimensional vector similarity.
+
+Each similarity measurement algorithm has its advantages and disadvantages, and developers need to choose based on their data characteristics and business scenarios.
+
+## Filtering
+
+In practical business scenarios, similarity searches are often not needed across the entire vector database but are filtered by some business fields before querying. Therefore, vectors stored in the database often need to include metadata, such as user ID, document ID, etc. This allows filtering search results based on metadata to get the final result.
+
+To achieve this, vector databases typically maintain two indexes: a vector index and a metadata index. Metadata filtering is performed before or after the similarity search itself, but in either case, it can slow down the query process.
+
+![VwZxFW](https://storage.guangzhengli.com/images/VwZxFW.jpg)
+
+The filtering process can be performed before or after the vector search itself, but each method has its challenges and may affect query performance:
+
+- Pre-filtering: Metadata filtering is performed before the vector search. While this can help reduce the search space, it may cause the system to ignore relevant results that do not match the metadata filtering criteria.
+
+- Post-filtering: Metadata filtering is performed after the vector search is completed. This ensures that all relevant results are considered, and irrelevant results are filtered out after the search.
+
+To optimize the filtering process, vector databases use various techniques, such as advanced indexing methods for metadata or parallel processing to speed up filtering tasks. Balancing search performance and filtering accuracy is crucial for providing efficient and relevant vector database query results.
+
+## Choosing a Vector Database
+
+In this article, I have spent a lot of time introducing the principles and implementation of similarity search algorithms in vector databases. While similarity search algorithms are a core and key point of a vector database, other factors need to be considered in practical business scenarios, such as the database's availability, scalability, security, whether the code is open source, and the community's activity.
+
+### Distributed
+
+A mature vector database often needs to support distributed deployment to meet the storage and query needs of large-scale data. The more data you have, the more nodes you need, and the more errors and failures you encounter. Therefore, a distributed vector database needs to have high availability and fault tolerance.
+
+High availability and fault tolerance in databases often require implementing sharding and replication capabilities. In traditional databases, sharding is often done based on the primary key or business needs. However, in distributed vector databases, sharding needs to consider vector similarity to ensure query quality and speed.
+
+Other factors, such as consistency of replicated node data, data security, etc., also need to be considered in distributed vector databases.
+
+### Access Control and Backup
+
+In addition, whether the access control design is sufficient is another factor to consider. For example, when an organization and business grow rapidly, can new users and permissions be quickly added? Can new nodes be quickly added? Are audit logs complete? These are all factors to consider.
+
+Moreover, database monitoring and backup are also important factors. When data fails, being able to quickly locate problems and restore data is a must for a mature vector database.
+
+### API & SDK
+
+Compared to the above factors, API & SDK may often be overlooked, but in practical business scenarios, API & SDK are often the most concerned factors for developers. The design of API & SDK directly affects the development efficiency and user experience of developers. A well-designed API & SDK can adapt to different needs. Vector databases are a new field, and this point is easily overlooked when most people are not clear about the needs in this area.
+
+### Selection
+
+As of now, the following are some vector database options:
+
+| Vector Database | URL | GitHub Star | Language | Cloud |
+| --- | --- | --- | --- | --- |
+| chroma | https://github.com/chroma-core/chroma | 7.4K | Python | ❌ |
+| milvus | https://github.com/milvus-io/milvus | 21.5K | Go/Python/C++ | ✅ |
+| pinecone | https://www.pinecone.io/ | ❌ | ❌ | ✅ |
+| qdrant | https://github.com/qdrant/qdrant | 11.8K | Rust | ✅ |
+| typesense | https://github.com/typesense/typesense | 12.9K | C++ | ❌ |
+| weaviate | https://github.com/weaviate/weaviate | 6.9K | Go | ✅ |
+
+### Extending Traditional Data
+
+Besides choosing a specialized vector database, extending traditional databases is also an option. For example, Redis, besides its traditional Key-Value database use, offers Redis Modules, which extend Redis with new features, commands, and data types. For example, the [RediSearch](https://redis.io/docs/interact/search-and-query/) module extends vector search capabilities.
+
+Similarly, PostgreSQL extensions can extend database functionality. For example, [pgvector](https://github.com/pgvector/pgvector) enables vector search capabilities. It supports exact and similarity searches, cosine similarity, and other similarity measurement algorithms. Most importantly, it is attached to PostgreSQL, allowing you to leverage all PostgreSQL features, such as ACID transactions, concurrency control, backup, and recovery. It also has all PostgreSQL client libraries, allowing access from any language's PostgreSQL client, reducing developer learning and service maintenance costs.
+
+For example, my open-source projects [ChatFiles](https://github.com/guangzhengli/ChatFiles) and [VectorHub](https://github.com/guangzhengli/vectorhub) currently use pgvector to implement vector search for GPT document Q&A, based on [Supabase's PostgreSQL + pgvector](https://supabase.com/blog/openai-embeddings-postgres-vector) service.
+
+## Summary
+
+This article mainly introduces the principles and implementation of vector databases, including basic concepts, similarity search algorithms, similarity measurement algorithms, filtering algorithms, and vector database selection. Vector databases are a new field, and most vector database companies' valuations are rapidly growing with the AI and GPT wave. However, in practical business scenarios, the application scenarios of vector databases are still relatively few. Developers and business experts need to explore the application scenarios of vector databases beyond the hype.
+
+## References
+
+- https://www.bilibili.com/video/BV11a4y1c7SW
+- https://www.bilibili.com/video/BV1BM4y177Dk
+- https://www.pinecone.io/learn/vector-database/
+- https://github.com/guangzhengli/ChatFiles
+- https://github.com/guangzhengli/vectorhub
+- https://www.anthropic.com/index/100k-context-windows
+- https://js.langchain.com/docs/
+- https://www.pinecone.io/learn/series/faiss/locality-sensitive-hashing/
+- https://www.pinecone.io/learn/series/faiss/product-quantization/
+- https://www.pinecone.io/learn/series/faiss/locality-sensitive-hashing-random-projection/
+- https://www.youtube.com/watch?v=QvKMwLjdK-s&t=168s&ab_channel=JamesBriggs
+- https://www.pinecone.io/learn/series/faiss/faiss-tutorial/
+- https://www.youtube.com/watch?v=sKyvsdEv6rk&ab_channel=JamesBriggs
+- https://www.pinecone.io/learn/vector-similarity/
+- https://github.com/chroma-core/chroma
+- https://github.com/milvus-io/milvus
+- https://www.pinecone.io/
+- https://github.com/qdrant/qdrant
+- https://github.com/typesense/typesense
+- https://github.com/weaviate/weaviate
+- https://redis.io/docs/interact/search-and-query/
+- https://github.com/pgvector/pgvector
