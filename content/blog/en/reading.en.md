@@ -3,7 +3,7 @@ title: Using Reading as a Method
 date: 2023-03-18T16:05:00+08:00
 tags: ["reading", "writing"]
 series: ["reading-writing"]
-featured: true
+featured: false
 ---
 
 When I first started college, I disliked discussing reading as a method for research. I believed that reading should be purely for pleasure, only caring about resonance and enjoyment. At that time, I pursued a superficial understanding of books and looked down on the research-like reading methods, scoffing at the meticulous and detailed reading approach.
