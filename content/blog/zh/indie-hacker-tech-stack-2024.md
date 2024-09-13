@@ -89,12 +89,6 @@ shadcn/ui 与常见的 Ant Design 和 Chakra 等 Component library 不同，它�
 
 说完了前端库和平台的选择，我们来到后端的领域，其实纯后端的选择反而不多。因为后端想要提供服务，离不开 CPU、内存、带宽等资源，而这些资源各大花销都不少，所以我更多推荐 Serverless 的方案。如果你想要熟悉的后端框架，也可以使用 [Railway](https://railway.app/)、[Fly.io](https://fly.io/) 等平台来部署容器。
 
-## Mobile
-
-如果你的项目还需要移动端 App，我本人对于原生应用开发的话不是太了解（除了很早之前写过 android 后再也没接触过原生应用开发），这里推荐 [T4 Stack](https://docs.t4stack.com/tech-stack)，移动端主要用的是 [Expo](https://expo.dev/)，其它和本文大部分的技术栈重合，可以减少学习和开发的成本。
-
-![t4-stack](https://storage.guangzhengli.com/images/t4-stack.png)
-
 ### Cloudflare Worker
 
 选择 Serverless 是最省钱的方案，因为一切都是按量付费，这意味着在你的独立项目开始一段时间内，不用担心服务费用的问题，唯一要小心的就是云服务平台打着免费的幌子，等你深度使用后再收割韭菜，毕竟 Serverless 方案换云服务平台还是比较麻烦的。所以如果你想要选择 Serverless 方案，我唯一推荐的就是 [Cloudflare Worker](https://workers.cloudflare.com/)。
@@ -114,6 +108,12 @@ shadcn/ui 与常见的 Ant Design 和 Chakra 等 Component library 不同，它�
 关于后端的语言和框架，这里不做推荐，因为后端语言和框架的选择更多是取决于你的熟悉程度，笔者因为工作和开源，用过 Java/Spring、C#/.NET、Ruby/Rails、Nodejs/Express、Python/FastAPI、Go/Gin 等后端框架，每个框架都有自己的优缺点，这里我只推荐你使用熟悉程度高和开源生态好的框架，因为在部署费用差不多的情况下，选择熟悉的框架可以提高开发效率。
 
 推荐使用容器部署的方案，而不是自己管理主机部署，关于容器部署的平台，推荐 [Railway](https://railway.app/) 和 [Fly.io](https://fly.io/)，这两个平台都是容器部署和管理比较丝滑的平台，除了部署后端外，也可以部署数据库等服务。推荐理由是这两个平台因为个人开源活跃度还算高的原因，都送了我每月 $5 的免费额度，而且用完后确实感觉还不错。
+
+## Mobile
+
+如果你的项目还需要移动端 App，我本人对于原生应用开发的话不是太了解（除了很早之前写过 android 后再也没接触过原生应用开发），这里推荐 [T4 Stack](https://docs.t4stack.com/tech-stack)，移动端主要用的是 [Expo](https://expo.dev/)，其它和本文大部分的技术栈重合，可以减少学习和开发的成本。
+
+![t4-stack](https://storage.guangzhengli.com/images/t4-stack.png)
 
 ## Auth
 
