@@ -89,6 +89,12 @@ shadcn/ui 与常见的 Ant Design 和 Chakra 等 Component library 不同，它�
 
 说完了前端库和平台的选择，我们来到后端的领域，其实纯后端的选择反而不多。因为后端想要提供服务，离不开 CPU、内存、带宽等资源，而这些资源各大花销都不少，所以我更多推荐 Serverless 的方案。如果你想要熟悉的后端框架，也可以使用 [Railway](https://railway.app/)、[Fly.io](https://fly.io/) 等平台来部署容器。
 
+## Mobile
+
+如果你的项目还需要移动端 App，我本人对于原生应用开发的话不是太了解（除了很早之前写过 android 后再也没接触过原生应用开发），这里推荐 [T4 Stack](https://docs.t4stack.com/tech-stack)，移动端主要用的是 [Expo](https://expo.dev/)，其它和本文大部分的技术栈重合，可以减少学习和开发的成本。
+
+![t4-stack](https://storage.guangzhengli.com/images/t4-stack.png)
+
 ### Cloudflare Worker
 
 选择 Serverless 是最省钱的方案，因为一切都是按量付费，这意味着在你的独立项目开始一段时间内，不用担心服务费用的问题，唯一要小心的就是云服务平台打着免费的幌子，等你深度使用后再收割韭菜，毕竟 Serverless 方案换云服务平台还是比较麻烦的。所以如果你想要选择 Serverless 方案，我唯一推荐的就是 [Cloudflare Worker](https://workers.cloudflare.com/)。
@@ -115,11 +121,13 @@ shadcn/ui 与常见的 Ant Design 和 Chakra 等 Component library 不同，它�
 
 无需管理用户密码、无需自己负责登陆安全，只需要简单的配置和代码即可实现。更重要的是，不需要集成其它的云服务，减少了复杂度和成本。
 
-像老牌的 [Auth0](https://auth0.com/) 或者新兴的 [Clerk](https://clerk.com/) 这样的云服务，虽然功能性和生态性都挺好，但是免费套餐比较少，后续的收费也非常的昂贵，不太推荐使用。
+像老牌的 [Auth0](https://auth0.com/) 或者新兴的 [Clerk](https://clerk.com/) 这样的云服务，虽然功能性和生态性都挺好，但是免费套餐比较少，后续的收费也非常的昂贵，所以需要根据自己的需求来抉择。
+
+例如 [Clerk](https://clerk.com/) 的免费套餐只支持 10000 的 MAU(Monthly Active User)，后续的收费是 $0.02/MAU，这意味着后续每多一万个月度活跃用户，就需要多 $200 的账单，还是比较昂贵的。所以对于独立开发者来说，如果你的项目大部分都是付费用户，那么初期选择 [Auth0](https://auth0.com/) 或者 [Clerk](https://clerk.com/) 是又方便又稳定的，但是如果是免费用户多的项目，选择这些云服务商就需要考虑成本了。
 
 ### [Supabase Auth](https://supabase.com/auth)
 
-如果你的业务 auth 需求比较复杂，例如需要自定义登录、注册、密码找回、2FA认证等，那么推荐使用 [Supabase Auth](https://supabase.com/auth)。支持 50000 的月活用户，服务稳定，用户管理可以和数据库可以放在一起，而且支持社交登录、邮箱密码登录、2FA 等功能。
+如果你的业务 auth 需求比较复杂，例如需要自定义登录、注册、密码找回、2FA认证等，那么推荐使用 [Supabase Auth](https://supabase.com/auth)。支持 5w 的月活用户（$25/m 后支持 10w 的 MAU，这足以满足绝大多数的项目啦），服务稳定，用户管理可以和数据库可以放在一起，而且支持社交登录、邮箱密码登录、2FA 等功能。
 
 ### [Cloudflare Zero Trust](https://developers.cloudflare.com/cloudflare-one/)
 
@@ -172,6 +180,8 @@ shadcn/ui 与常见的 Ant Design 和 Chakra 等 Component library 不同，它�
 如果你没有条件使用 Stripe 的话，这里推荐使用 [Lemonsquzz](https://www.lemonsqueezy.com/) 作为替代，它也是一个国外的支付服务商，支持外国信用卡、PayPal 等支付渠道，也支持国内支付宝、微信等支付方式。特别在国外比较常见的订阅收款上，[Lemonsquzz](https://www.lemonsqueezy.com/) 支持支付宝进行订阅周期付款，可以做到国内国外用户的支付统一。
 
 虽然它的抽成比 Stripe 要高，稳定性也不如 Stripe，但是国内的独立开发者可以直接注册使用，无需注册公司。并且也有一系列的增值服务可以使用，例如折扣管理、订阅管理、提供支付页面等等。所以如果你打算初期先跑通商业模式，那么可以考虑初期先用 [Lemonsquzz](https://www.lemonsqueezy.com/)，后期再考虑注册公司使用 Stripe。
+
+相同的替代品还有 [Paddle](https://www.paddle.com)。
 
 ## Statistics
 
