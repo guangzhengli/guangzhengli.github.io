@@ -38,6 +38,7 @@ menu:
 params:
   brand: HOME
   avatarURL: /images/avatar.png
+  followId: feedId:54067560468306970+userId:41423885827537920
   author: Guangzheng Li
   authorDescription: 'Welcome to my blog, contact me: iguangzhengli@gmail.com'
   info: |
