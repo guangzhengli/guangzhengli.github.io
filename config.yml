@@ -116,6 +116,8 @@ params:
 languages:
   en:
     languageName: EN
+    info: |
+      [The best china travel guide website](https://chinagotrip.com)
   zh:
     languageName: 中
     brand: 主页

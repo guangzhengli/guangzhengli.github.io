@@ -267,3 +267,4 @@ shadcn/ui 与常见的 Ant Design 和 Chakra 等 Component library 不同，它�
 - https://supabase.com/
 - https://clarity.microsoft.com/
 - https://developer.chrome.com/docs/lighthouse/overview/
+- [The best china travel guide website](https://chinagotrip.com)
