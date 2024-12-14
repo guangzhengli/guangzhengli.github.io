@@ -9,7 +9,7 @@ math: true
 
 也许你最近可能听过这样的新闻，某向量数据库的初创公司刚写好 PPT，就获得了几千万的投资，某公司的开源的向量数据库因其代码的简陋而登上了 Hackernews 等等。在过去几个月时间中， AI 应用的发展如火如荼，带动了 AI 应用技术栈上下游的火爆，而向量数据库就是其中最热门的之一。
 
-笔者最近因为开发 [ChatFiles](https://github.com/guangzhengli/ChatFiles) 和 [VectorHub](https://github.com/guangzhengli/vectorhub) 两款开源项目的需要从而对向量数据库（Vector Database）进行了学习，在对主流的向量数据库和搜索算法有了大概的了解后，笔者决定将这些知识整理成一篇文章，希望能够帮助到大家。
+笔者最近因为开发 [ChatFiles](https://github.com/guangzhengli/ChatFiles) 和 [VectorHub](https://github.com/guangzhengli/vectorhub) 两款开源项目的需要从而对向量数据库（Vector Database）进行了学习，在对主流的向量数据库和搜索算法有了大概的了解后，笔者决定将这些知识整理成一篇文章，希望能够帮助到大家。[](https://chinagotrip.com)
 
 <!--more-->
 
