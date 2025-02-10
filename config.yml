@@ -29,12 +29,9 @@ menu:
     - name: Archive
       url: /archives
       weight: 3
-    - name: Guestbook
-      url: /guestbook
-      weight: 4
     - name: Dashboard
       url: https://analytics.guangzhengli.com/share/o3zAba1V/guangzhengli
-      weight: 5
+      weight: 4
 params:
   brand: HOME
   avatarURL: /images/avatar.png
@@ -127,7 +124,9 @@ languages:
       一个还在重新学习，重塑思想的开发者
 
       [RSS订阅](https://guangzhengli.com/index.xml) ·
-      [赞赏](https://guangzhengli.com/sponsors)
+      [赞赏](https://guangzhengli.com/sponsors) ·
+      [X](https://x.com/iguangzhengli) ·
+      [小红书](https://www.xiaohongshu.com/user/profile/6076c9a2000000000101e862)
     guestbook:
       title: 留言板
       description: 您的评论，会让该网站更精彩！
@@ -142,12 +141,9 @@ languages:
         - name: 历史文章
           url: /archives
           weight: 3
-        - name: 留言板
-          url: /guestbook
-          weight: 4
         - name: 网站统计
           url: https://analytics.guangzhengli.com/share/o3zAba1V/guangzhengli
-          weight: 5
+          weight: 4
 taxonomies:
   series: series
   tag: tags
