@@ -110,6 +110,8 @@ params:
         0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20
         0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
       url: 'https://twitter.com/iguangzhengli'
+    - name: 小红书
+      url: 'https://www.xiaohongshu.com/user/profile/6076c9a2000000000101e862'
 languages:
   en:
     languageName: EN
