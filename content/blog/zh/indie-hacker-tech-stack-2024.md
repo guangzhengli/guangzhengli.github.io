@@ -1,6 +1,6 @@
 ---
 title: 独立开发技术栈 2025
-date: 2025-01-11T22:00:00+08:00
+date: 2024-04-07T22:00:00+08:00
 tags: ["indiehacker", "tech-stack", "cloud"]
 series: ["share"]
 featured: true
