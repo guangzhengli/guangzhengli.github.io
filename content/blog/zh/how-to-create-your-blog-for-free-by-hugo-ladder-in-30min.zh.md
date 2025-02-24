@@ -3,7 +3,7 @@ title: 如何 30 分钟搭建一套完整独立博客
 date: 2022-08-14T16:47:12+08:00
 tags: ["hugo", "ladder主题", "教程", "GitHub Pages"]
 series: ["how to create your blog"]
-featured: true
+featured: false
 ---
 
 本文是关于如何搭建免费的独立博客系列的第二篇，包括如何使用本博客主题 `hugo-ladder`，如何集成评论和统计功能等。如果后续打算使用该主题来搭建和运营博客，建议跟随本篇文章来搭建。
