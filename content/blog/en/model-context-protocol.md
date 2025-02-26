@@ -3,7 +3,7 @@ title: The Ultimate Guide to MCP
 date: 2025-02-22T20:10:00+08:00
 tags: ["mcp", "ai", "gpt", "genai"]
 series: ["GPT Development"]
-featured: true
+featured: false
 math: false
 ---
 
