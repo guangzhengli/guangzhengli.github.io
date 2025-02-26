@@ -32,7 +32,7 @@ math: false
 
 为什么 AI 集成已有服务的进展这么缓慢？这里面有很多的原因，一方面是企业级的数据很敏感，大多数企业都要很长的时间和流程来动。另一个方面是技术方面，我们缺少一个开放的、通用的、有共识的协议标准。
 
-MCP 就是 Claude(Anthropic) 主导发布的一个开放的、通用的、有共识的协议标准，如果你是一个对 AI 模型熟悉的开发人员，想必对 Anthropic 这个公司不会陌生，他们发布了 Claude 3.5 Sonnet 的模型，到目前为止应该还是最强的编程 AI 模型。
+MCP 就是 Claude(Anthropic) 主导发布的一个开放的、通用的、有共识的协议标准，如果你是一个对 AI 模型熟悉的开发人员，想必对 Anthropic 这个公司不会陌生，他们发布了 Claude 3.5 Sonnet 的模型，到目前为止应该还是最强的编程 AI 模型(刚写完就发布了 3.7😅)。
 
 > 这里还是要多提一句，这个协议的发布最好机会应该是属于 OpenAI 的，如果 OpenAI 刚发布 GPT 时就推动协议，相信大家都不会拒绝，但是 OpenAI 变成了 CloseAI，只发布了一个封闭的 GPTs，这种需要主导和共识的标准协议一般很难社区自发形成，一般由行业巨头来主导。
 
@@ -314,6 +314,8 @@ AI Agent 在用户输入 `我需要查询本地错误日志，将相关的 Issue
 - [Cursor Directory](https://cursor.directory)
 - [Pulsemcp](https://www.pulsemcp.com/)
 - [Glama MCP Servers](https://glama.ai/mcp/servers)
+
+## 最后的一些思考
 
 最后本篇文章可以转载，但是请注明出处，会在 X/Twitter，小红书同步发布，欢迎各位大佬关注一波。
 
