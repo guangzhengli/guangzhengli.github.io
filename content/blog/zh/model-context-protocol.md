@@ -17,9 +17,11 @@ math: false
 
 ## 为什么 MCP 是一个突破
 
-我们知道过去一年时间，AI 模型的发展非常迅速，从 GPT 4 到 Claude Sonnet 3.5 到 Deepseek R1，推理和幻觉都进步的非常明显。新的 AI 应用也很多，但我们都能感受到的一点是，目前市场上的 AI 应用基本都是全新的服务，和我们原来常用的服务和系统并没有集成，换句话说，AI 模型和我们已有系统集成发展的很缓慢。
+我们知道过去一年时间，AI 模型的发展非常迅速，从 GPT 4 到 Claude Sonnet 3.5 到 Deepseek R1，推理和幻觉都进步的非常明显。
 
-例如我们目前还不能够通过某个 AI 应用来**同时**做到联网搜索、发送邮件、发布自己的博客等等，这些功能单个实现都不是很难，但是如果要全部集成到一个系统里面，就会变得遥不可及。
+新的 AI 应用也很多，但我们都能感受到的一点是，目前市场上的 AI 应用基本都是全新的服务，和我们原来常用的服务和系统并没有集成，换句话说，AI 模型和我们已有系统集成发展的很缓慢。
+
+例如我们目前还不能**同时**通过某个 AI 应用来做到联网搜索、发送邮件、发布自己的博客等等，这些功能单个实现都不是很难，但是如果要全部集成到一个系统里面，就会变得遥不可及。
 
 如果你还没有具体的感受，我们可以思考一下日常开发中，想象一下在 IDE 中，我们可以通过 IDE 的 AI 来完成下面这些工作。
 
@@ -28,7 +30,7 @@ math: false
 - 通过 AI 将某个 PR 的意见发送给同事的即时通讯软件(例如 Slack)来 Code Review
 - 通过 AI 查询甚至修改当前 AWS、Azure 的配置来完成部署
 
-以上谈到的这些功能通过 MCP 正在变为现实，大家可以关注 [Cursor MCP](https://docs.cursor.com/context/model-context-protocol) 和 [Windsurf MCP](https://www.youtube.com/watch?v=Y_kaQmhGmZk) 获取更多的信息。可以试试用 Cursor MCP + [browsertools](https://browsertools.agentdesk.ai/installation) 插件来体验一下在 Cursor 中自动获取 Chrome dev tools console log 的能力。
+以上谈到的这些功能通过 MCP 目前正在变为现实，大家可以关注 [Cursor MCP](https://docs.cursor.com/context/model-context-protocol) 和 [Windsurf MCP](https://www.youtube.com/watch?v=Y_kaQmhGmZk) 获取更多的信息。可以试试用 Cursor MCP + [browsertools](https://browsertools.agentdesk.ai/installation) 插件来体验一下在 Cursor 中自动获取 Chrome dev tools console log 的能力。
 
 为什么 AI 集成已有服务的进展这么缓慢？这里面有很多的原因，一方面是企业级的数据很敏感，大多数企业都要很长的时间和流程来动。另一个方面是技术方面，我们缺少一个开放的、通用的、有共识的协议标准。
 
@@ -137,7 +139,7 @@ AI Agent 是一个完全的自动化程序，未来完全可以做到自动读�
 
 ### MCP Server 的工作原理
 
-我们先来看一个简单的例子，假设我们想让 AI Agent 自动搜索相关的 GitHub Repository，接着搜索 Issue，然后再判断是否是一个已知的 bug，最后决定是否需要提交一个新的 Issue。
+我们先来看一个简单的例子，假设我们想让 AI Agent 完成自动搜索 GitHub Repository，接着搜索 Issue，然后再判断是否是一个已知的 bug，最后决定是否需要提交一个新的 Issue 的功能。
 
 那么我们就需要创建一个 Github MCP Server，这个 Server 需要提供查找 Repository、搜索 Issues 和创建 Issue 三种能力。
 
@@ -304,10 +306,10 @@ AI Agent 在用户输入 `我需要查询本地错误日志，将相关的 Issue
 
 ### MCP 官方资源
 
-[官方的开源组织 Model Context Protocol](https://github.com/modelcontextprotocol)。
-[官方的文档 modelcontextprotocol]([modelcontextprotocol](https://modelcontextprotocol.io/introduction))。
-[官方的 MCP Server 列表](https://github.com/modelcontextprotocol/servers)
-[Claude Blog](https://www.anthropic.com/news/model-context-protocol)
+- [官方的开源组织 Model Context Protocol](https://github.com/modelcontextprotocol)。
+- [官方的文档 modelcontextprotocol]([modelcontextprotocol](https://modelcontextprotocol.io/introduction))。
+- [官方的 MCP Server 列表](https://github.com/modelcontextprotocol/servers)
+- [Claude Blog](https://www.anthropic.com/news/model-context-protocol)
 
 ### 社区的 MCP Server 的列表
 
@@ -315,7 +317,9 @@ AI Agent 在用户输入 `我需要查询本地错误日志，将相关的 Issue
 - [Pulsemcp](https://www.pulsemcp.com/)
 - [Glama MCP Servers](https://glama.ai/mcp/servers)
 
-## 最后的一些思考
+## 写在最后
+
+本篇文章写的比较仓促，如果有错误再所难免，欢迎各位大佬指正。
 
 最后本篇文章可以转载，但是请注明出处，会在 X/Twitter，小红书同步发布，欢迎各位大佬关注一波。
 
