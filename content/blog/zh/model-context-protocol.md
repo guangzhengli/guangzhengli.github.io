@@ -321,7 +321,7 @@ AI Agent 在用户输入 `我需要查询本地错误日志，将相关的 Issue
 
 本篇文章写的比较仓促，如果有错误再所难免，欢迎各位大佬指正。
 
-最后本篇文章可以转载，但是请注明出处，会在 X/Twitter，小红书同步发布，欢迎各位大佬关注一波。
+最后本篇文章可以转载，但是请注明出处，会在 [X/Twitter](https://x.com/iguangzhengli)，[小红书](https://www.xiaohongshu.com/user/profile/6076c9a2000000000101e862), [微信公众号](https://storage.guangzhengli.com/images/wechat-official-account.png) 同步发布，欢迎各位大佬关注一波。
 
 ## References
 
