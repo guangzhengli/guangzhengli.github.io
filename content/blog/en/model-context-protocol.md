@@ -76,11 +76,17 @@ What are the differences between function calling, AI Agent, and MCP?
 - Function Calling refers to the mechanism where AI models automatically execute functions based on context.
 - Function Calling acts as a bridge between AI models and external systems. Different models have different Function Calling implementations, and code integration methods also differ. They are defined and implemented by different AI model platforms.
 
+When using Function Calling, we need to provide a set of functions to the LLM through code, along with clear function descriptions, inputs, and outputs. This allows the LLM to reason based on clear structured data and execute functions.
+
+The disadvantage of Function Calling is that it doesn't handle multi-turn conversations and complex requirements well. It's suitable for tasks with clear boundaries and explicit descriptions. If you need to handle many tasks, Function Calling code becomes difficult to maintain.
+
 ### Model Context Protocol (MCP)
 
 - MCP is a standard protocol, like the Type C protocol for electronic devices (which can both charge and transfer data), enabling AI models to seamlessly interact with different APIs and data sources.
 - MCP aims to replace fragmented Agent code integration, making AI systems more reliable and effective. By establishing common standards, service providers can launch AI capabilities for their own services based on the protocol, enabling developers to build more powerful AI applications faster. Developers also don't need to reinvent the wheel - they can build a strong AI Agent ecosystem through open source projects.
 - MCP can maintain context between different applications/services, enhancing overall autonomous task execution capabilities.
+
+You can think of MCP as handling different tasks in layers, with each layer providing specific capabilities, descriptions, and limitations. The MCP Client determines whether to call certain capabilities based on different tasks, then builds an Agent that can handle complex, multi-step conversations and unified context through the inputs and outputs of each layer.
 
 ### AI Agent
 
@@ -88,8 +94,6 @@ What are the differences between function calling, AI Agent, and MCP?
 - AI Agents can use functionality descriptions provided by MCP to understand more context and automatically execute tasks across various platforms/services.
 
 ### Differences
-
-Simply put, MCP tells the AI Agent about the capabilities of different services and platforms. The AI Agent, based on context and model reasoning, determines whether to call a service, then uses Function Calling to execute functions. These functions are communicated to Function Calling through MCP, and the entire process is completed through specific code provided by the MCP protocol.
 
 The main benefits of MCP for the community ecosystem are:
 
@@ -316,7 +320,7 @@ Here are some MCP resources I personally recommend:
 
 ## Final Thoughts
 
-This article may be reproduced, but please cite the source. It will be published simultaneously on X/Twitter and Xiaohongshu. Welcome to follow.
+This article may be reproduced, but please cite the source. It will be published simultaneously on [X/Twitter](https://x.com/iguangzhengli), [Xiaohongshu](https://www.xiaohongshu.com/user/profile/6076c9a2000000000101e862), and [WeChat Official Account](https://storage.guangzhengli.com/images/wechat-official-account.png). Welcome to follow.
 
 ## References
 
